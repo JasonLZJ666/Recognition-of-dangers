@@ -52,6 +52,83 @@ danger-sign-recognition/
 | falling_objects | 高处坠物 | 高风险 |
 | explosion | 爆炸危险 | 极高风险 |
 
+## 可扩展数据集
+
+当前项目自带的是从 PDF 提取的 5 类标准样本。若要提高模型真实场景准确率，可以继续补充公开数据集和自采数据。推荐优先从以下来源扩展：
+
+| 数据集 | 适合用途 | 说明 |
+|---|---|---|
+| TT100K / Tsinghua-Tencent 100K | 中文道路交通标志、真实街景检测 | 清华-腾讯公开交通标志数据，来自 100000 张腾讯街景全景图，包含约 30000 个交通标志实例，提供类别、框和像素级标注。适合补充落石、水域、施工警告等真实道路标志。 |
+| GTSRB | 交通标志分类预训练/对比实验 | 德国交通标志识别基准，40 多类、5 万多张图片，适合做分类模型基线和迁移学习对照。 |
+| Mapillary Traffic Sign Dataset | 全球多场景交通标志检测/分类 | 包含全球街景、天气和光照变化，论文介绍为 100K 街景图、300 多个交通标志类别，适合增强泛化能力。 |
+| GLARE Dataset | 强光、眩光鲁棒性测试 | 面向强太阳眩光场景的交通标志检测数据，可用于测试模型在逆光、过曝情况下是否稳定。 |
+| GHS hazard pictograms | 易燃、爆炸等化学危险图标补充 | GHS 是化学品危险图形符号体系，可用于补充易燃、爆炸、腐蚀、毒性等标准图标样本；但它更偏标准图标，不等同于真实摄像头场景。 |
+
+建议扩展时仍按当前目录结构整理：
+
+```text
+dataset/
+  flammable/
+  falling_rocks/
+  water_hazard/
+  falling_objects/
+  explosion/
+```
+
+如果公开数据集的类别名称和本项目不完全一致，先筛选相近类别，再人工检查标签。例如 `falling_rocks` 可以优先找落石/山体滑坡/边坡警告标志，`flammable` 和 `explosion` 可以补充 GHS 或危化品运输标志。
+
+### 已下载的数据集
+
+本项目当前已经下载并整理了两类外部数据：
+
+```text
+external_datasets/raw/GTSRB_Final_Training_Images.zip
+external_datasets/raw/GTSRB_Final_Training_Images/
+external_datasets/prepared/gtsrb_warning/
+external_datasets/raw/ghs_pictograms/
+external_datasets/prepared/ghs_pictograms/
+dataset_extended/
+dataset_all/
+dataset_viewpoint/
+```
+
+其中：
+
+- `external_datasets/prepared/gtsrb_warning/` 是从 GTSRB 中筛选出来的 10 类警告标志辅助数据集，共 5550 张图，可用于训练一个“交通警告标志”分类模型。
+- `external_datasets/prepared/ghs_pictograms/` 包含 GHS 易燃和爆炸标准危险图标 PNG。
+- `dataset_extended/` 是当前 5 类危险标志训练集的增强版本，保留原有 5 类目录，并把 GHS 易燃/爆炸图标补充进 `flammable` 和 `explosion` 类，适合直接训练网页前端对应的 5 类模型。
+- `dataset_all/` 是方案 B 使用的 15 类混合数据集，由 `dataset_extended/` 的 5 类危险标志和 `gtsrb_warning/` 的 10 类交通警告标志合并而成，共 5557 张图，适合展示更大规模的训练实验。
+- `dataset_viewpoint/` 是最终推荐使用的 5 类视角/光照增强数据集，只包含附件里的 5 种危险标志，不增加新类别；每类 221 张，共 1105 张，包含旋转、缩放、仿射倾斜、亮度变化、对比度变化、轻微模糊、阴影和背景扰动。
+
+最终网页模型建议使用 `dataset_viewpoint/` 训练，因为最终识别目标仍然是附件里的 5 类危险标志，只是拍摄时会出现不同角度和光线：
+
+```powershell
+python model\build_viewpoint_dataset.py --source dataset --out dataset_viewpoint --per-class 220 --size 320
+python model\train_model.py --dataset dataset_viewpoint --out model\artifacts_viewpoint --arch efficientnet_b0 --pretrained --freeze-backbone --epochs 30 --batch-size 16 --repeats 1
+python model\export_onnx.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt
+```
+
+使用增强后的 5 类数据训练当前网页模型：
+
+```powershell
+python model\train_model.py --dataset dataset_extended --out model\artifacts_extended --arch efficientnet_b0 --pretrained --freeze-backbone --epochs 30
+python model\export_onnx.py --checkpoint model\artifacts_extended\best_danger_sign_model.pt
+```
+
+使用 GTSRB 警告标志子集训练辅助模型：
+
+```powershell
+python model\train_model.py --dataset external_datasets\prepared\gtsrb_warning --out model\artifacts_gtsrb_warning --arch efficientnet_b0 --pretrained --freeze-backbone --epochs 20
+```
+
+使用方案 B 的 15 类混合数据集训练模型：
+
+```powershell
+python model\train_model.py --dataset dataset_all --out model\artifacts_all --arch efficientnet_b0 --pretrained --freeze-backbone --epochs 20 --batch-size 16 --repeats 1
+```
+
+注意：GTSRB 的类别体系和当前网页的 5 类危险标志不完全一致，所以不要直接把 `gtsrb_warning` 或 `dataset_all` 导出替换网页模型；它们更适合作为额外实验、预训练对照或报告里的大数据集扩展证明。若要让网页展示 15 类结果，需要同步扩展 `app/app.js` 里的 `SIGN_LIBRARY`。
+
 ## 模型说明
 
 前端系统已接入 ONNX Runtime Web，会优先加载 `app/model/danger_sign_model.onnx` 进行训练模型推理。如果 ONNX 模型或浏览器运行库加载失败，系统会自动回退到无依赖离线识别引擎：它会把输入图像归一化为危险标志特征图，再与 5 类标准样本进行相似度匹配，适合课程演示、系统验收和离线运行。
@@ -83,6 +160,7 @@ model/callbacks.py          EarlyStopping 和 CheckpointWriter
 model/model_utils.py        参数量、模型体积、环境快照等工具
 model/reporting.py          CSV、JSON、实验报告和模型卡片导出
 model/data_audit.py         数据集尺寸、数量、重复哈希审计
+model/build_viewpoint_dataset.py  从 5 张附件图生成角度/光照增强数据
 model/training_engine.py    单轮训练/验证循环和指标汇总
 model/evaluate_model.py     独立 checkpoint 评估和分类报告导出
 model/train_model.py        命令行入口和训练编排

@@ -8,7 +8,7 @@ DEFAULT_DATASET_DIR = PROJECT_ROOT / "dataset"
 DEFAULT_ARTIFACT_DIR = PROJECT_ROOT / "model" / "artifacts"
 DEFAULT_APP_MODEL_DIR = PROJECT_ROOT / "app" / "model"
 
-IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".ppm"}
 IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
 SUPPORTED_ARCHITECTURES = ("efficientnet_b0", "resnet18", "mobilenet_v3_small", "strong_cnn")
