@@ -1,0 +1,89 @@
+{
+  "arch": "efficientnet_b0",
+  "pretrained": true,
+  "freeze_backbone": true,
+  "classes": [
+    "explosion",
+    "falling_objects",
+    "falling_rocks",
+    "flammable",
+    "water_hazard"
+  ],
+  "class_to_idx": {
+    "explosion": 0,
+    "falling_objects": 1,
+    "falling_rocks": 2,
+    "flammable": 3,
+    "water_hazard": 4
+  },
+  "image_size": 224,
+  "training_config": {
+    "dataset": "dataset_extended",
+    "out": "model\\artifacts_extended",
+    "arch": "efficientnet_b0",
+    "pretrained": true,
+    "freeze_backbone": true,
+    "epochs": 30,
+    "batch_size": 16,
+    "image_size": 224,
+    "repeats": 120,
+    "lr": 0.0002,
+    "weight_decay": 0.0001,
+    "dropout": 0.35,
+    "label_smoothing": 0.05,
+    "patience": 8,
+    "min_delta": 0.0,
+    "metric_for_best": "val_macro_f1",
+    "seed": 2026,
+    "workers": 0,
+    "auto_augment": true,
+    "amp": false,
+    "deterministic": false
+  },
+  "parameter_summary": {
+    "total": 4336769,
+    "trainable": 329221,
+    "frozen": 4007548,
+    "trainable_ratio": 0.07591388888824838
+  },
+  "estimated_model_size_mb": 16.704,
+  "trainable_layers_preview": [
+    "classifier.1.weight",
+    "classifier.1.bias",
+    "classifier.4.weight",
+    "classifier.4.bias"
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "param_groups": [
+      {
+        "group": 0,
+        "lr": 0.0002,
+        "weight_decay": 0.0001,
+        "params": 329221
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.14.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.12.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "device": "cpu",
+    "amp": false
+  },
+  "dataset_audit": {
+    "class_count": 5,
+    "image_count": 7,
+    "global": {
+      "min_width": 512,
+      "max_width": 1480,
+      "min_height": 512,
+      "max_height": 1480,
+      "min_file_size": 17193,
+      "max_file_size": 84787,
+      "duplicate_group_count": 0
+    }
+  }
+}

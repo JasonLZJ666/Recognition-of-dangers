@@ -1,0 +1,3654 @@
+{
+  "dataset_dir": "danger-sign-recognition\\dataset_test_viewpoint",
+  "class_count": 5,
+  "image_count": 400,
+  "classes": {
+    "explosion": {
+      "image_count": 80,
+      "min_width": 320,
+      "max_width": 320,
+      "min_height": 320,
+      "max_height": 320
+    },
+    "falling_objects": {
+      "image_count": 80,
+      "min_width": 320,
+      "max_width": 320,
+      "min_height": 320,
+      "max_height": 320
+    },
+    "falling_rocks": {
+      "image_count": 80,
+      "min_width": 320,
+      "max_width": 320,
+      "min_height": 320,
+      "max_height": 320
+    },
+    "flammable": {
+      "image_count": 80,
+      "min_width": 320,
+      "max_width": 320,
+      "min_height": 320,
+      "max_height": 320
+    },
+    "water_hazard": {
+      "image_count": 80,
+      "min_width": 320,
+      "max_width": 320,
+      "min_height": 320,
+      "max_height": 320
+    }
+  },
+  "global": {
+    "min_width": 320,
+    "max_width": 320,
+    "min_height": 320,
+    "max_height": 320,
+    "min_file_size": 14755,
+    "max_file_size": 55750,
+    "duplicate_group_count": 0
+  },
+  "duplicates": [],
+  "images": [
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0001.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37862,
+      "sha1": "10986d9f254f8c772c85a9dc9ee9be22508df8c5"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0002.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28884,
+      "sha1": "f2d77f88f441ea7fdbd9ad2277daec5ee0d9e718"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0003.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39245,
+      "sha1": "cdf441a1712b8b61a29e9e8f871596b15ca325cb"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0004.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35085,
+      "sha1": "08e5c001c7bda0a64ab1b24ca9a77836b30d5699"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0005.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38436,
+      "sha1": "ec2b4c4bf9b8a8bba720c648fe90f2fb04460415"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0006.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38644,
+      "sha1": "f17d96a9e5d00c9ad0c5f7b93141fa29131ffb79"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0007.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34810,
+      "sha1": "f9e52c6164517fbcc73243d820d2cac4c1c7d3e2"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0008.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41193,
+      "sha1": "cb787de8d2f6cd615a6cc488501c951a24a355d9"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0009.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33912,
+      "sha1": "a5bd743702e336f42f13d96f78ca11df2ad8687e"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0010.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43979,
+      "sha1": "925fde712cb7c75b26354be2dd9860b3a776140e"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0011.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 45272,
+      "sha1": "4e59cb090d88dd0b99d93f74fea321343b30e8ee"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0012.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26269,
+      "sha1": "0184129206600b7129e80f295436778e297977f6"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0013.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 55521,
+      "sha1": "09cd0d092e7ca694d2a96e37ceb85372030107c4"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0014.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40901,
+      "sha1": "43e117b1e77c4eb87deb86d41daa195df09d2bb9"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0015.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35813,
+      "sha1": "9b90ddc80b1c27c6b9d4a5ef38ba9b48308784c3"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0016.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39575,
+      "sha1": "1312dc3358d6bcb4ad889247053eaa2db23b4812"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0017.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42103,
+      "sha1": "d87caf81883ee7c5d4151abb2205f3beace47a8d"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0018.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 50189,
+      "sha1": "96ec620969c4b21c9095275932254de68a803862"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0019.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30490,
+      "sha1": "f648a0c0e07623b170f2459a288ab561063eba71"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0020.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34186,
+      "sha1": "257c81e6b3c91a2d8d084243e0ed1512bf777adc"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0021.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30816,
+      "sha1": "ef12c00a5dedde744c2fea6acd45f6e76e1d1930"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0022.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42351,
+      "sha1": "edc9308b6ad8d6b4bd3f50bb91f380dbc2a28957"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0023.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35903,
+      "sha1": "ee7898d55cf451abead90db6f6856df137c4be99"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0024.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 50390,
+      "sha1": "5d2db5ee3c1a7a99ba2fedc3590487436c99e756"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0025.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34796,
+      "sha1": "5f373747c7e8e87a1252597d6cb4ba561ee88734"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0026.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 46102,
+      "sha1": "0f879fe90a069c9ac714d0581ca41d79392f488f"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0027.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42868,
+      "sha1": "dfb8269674f2dc0668e956ab9d408db3288a5808"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0028.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 44043,
+      "sha1": "022ab6a6368cb6b54403cbf18862715fbb805e34"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0029.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41595,
+      "sha1": "dfbbe026e505a0225ad48bc725e4eedb13c39520"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0030.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32026,
+      "sha1": "db591c454b773bec673a6a0f1beaf627db8d7eab"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0031.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39792,
+      "sha1": "1f128d65453a238cfe3b3068af482c422e3c8a78"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0032.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 52935,
+      "sha1": "3c3bec0a6f2ce0d65080d94efa4c75a10e35f422"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0033.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28332,
+      "sha1": "915815956faa2a008e90a930e2cca62f495f3ee8"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0034.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43359,
+      "sha1": "ef54b0b142f75afaf5d5c1e0ae3cf6163012b537"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0035.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27168,
+      "sha1": "dc6b9529bcf5cea6473fdaa09cce667250ea3817"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0036.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39824,
+      "sha1": "e7b34d64e9afa835d625422f34b16d4d930cca89"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0037.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33398,
+      "sha1": "076947a9ebc9961b0ec8b838b2ad28f15a79339f"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0038.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35694,
+      "sha1": "0765912d3a76f9e7e3ffd2c2c8acc48d49e3da2b"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0039.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37099,
+      "sha1": "290dabe91563e62680d749f795cd338656f3a611"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0040.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 45075,
+      "sha1": "18c384ea3e718d8314194dd2abe7f5495eabc051"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0041.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28223,
+      "sha1": "3708b6f2f1345e150c7a04e17f9b2251760cb7ee"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0042.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 50859,
+      "sha1": "6d9a13be65d85194458ecec3641d8e0a806a730e"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0043.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38546,
+      "sha1": "a65317bf775f832be3a5510709412d52f03f81b6"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0044.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41739,
+      "sha1": "b8f3d39ab1217037b861493f126b2987e13ff57f"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0045.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28809,
+      "sha1": "c7a88fc2c71919e5f1a467b9320c65490099562e"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0046.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40474,
+      "sha1": "0af5870aacca9cfef572ab470f7ce89de587d6dd"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0047.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30866,
+      "sha1": "93d0311068f0f139cb7e4edf18a841bad9fcd97f"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0048.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34358,
+      "sha1": "390e9213ac459f38cd507448db53165285dbfb41"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0049.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40584,
+      "sha1": "266d0082ed22b951cdaaf6b28869a30edc53d289"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0050.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23039,
+      "sha1": "8edf816dd2a03ad4c9af3695093c58db061f3a8c"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0051.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 52095,
+      "sha1": "20f0a1c80a2883d62f5a052c260067cfbda921ab"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0052.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 53840,
+      "sha1": "4fd0e25c03902bc369bcde03039a1c1df0241683"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0053.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 48274,
+      "sha1": "b48688d05f5fad00fdaeffc8d6c28299365ddfc3"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0054.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 44064,
+      "sha1": "4785f618aac5a19404a49d59ef8194183e7e79fe"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0055.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30868,
+      "sha1": "3034dfaaa5cc10a7c27ed74aa7abba194e9b719b"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0056.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37218,
+      "sha1": "8a8e8740c9b067f8359b122fb7cd8671ff499ce4"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0057.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43321,
+      "sha1": "bf74da10c7bc8e16674f49604dff303d65a7fd20"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0058.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34704,
+      "sha1": "fe0a697dd9b5fc4e6ad62a04a83f287c792d8641"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0059.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41528,
+      "sha1": "1d16eadf915187ef78892e40a546be711c936996"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0060.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33742,
+      "sha1": "366bc42f44072407ef4935489dfdea8f696426f4"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0061.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41367,
+      "sha1": "72107608f2472e621cb975c6dc2cf7457de6b3a2"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0062.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 44216,
+      "sha1": "8ecec92f99dc9cb12ad411c6236663de922e012d"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0063.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33582,
+      "sha1": "80497fbf0940210610227c166d6e12875e82696c"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0064.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31521,
+      "sha1": "20b078f2c70938a688379ae2391de99a41f08e58"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0065.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31150,
+      "sha1": "136ee31c2d65dae95ff35fbd00148a18670fd080"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0066.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 55750,
+      "sha1": "ad3f237257d1d4af793df91e961a4cfe2276f6b1"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0067.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42750,
+      "sha1": "3e9c286e5e19a543a3d213e20ed5f25536d348f8"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0068.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35791,
+      "sha1": "bd5822b1852c49428f061e8aed4f9824a6950236"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0069.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39943,
+      "sha1": "c425dd9a4d024cae37d207df5e376c06f36047b6"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0070.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29755,
+      "sha1": "a5bf0fafd1b5c6781d8c6d2a8c2e0449bfe0ae98"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0071.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 47023,
+      "sha1": "489e34dd38c0010a2afffd78e7bdccd1843b6b40"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0072.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36274,
+      "sha1": "70bb99dbec13c0631ffc389bfdef2f5883ab6324"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0073.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43699,
+      "sha1": "3d380ad11f7f9bb9b86de5868a9f1126bc022210"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0074.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35970,
+      "sha1": "2cf3a4e1d83b45c8a7a05c9dece107dc9b61e6e6"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0075.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 49668,
+      "sha1": "152c6780b5f182a24eb2997aaaac7d0791c8159f"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0076.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28721,
+      "sha1": "29cbba2800967a7c18d67cb3d8aa37872c9e1fde"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0077.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 17152,
+      "sha1": "5a2bc889febb5876817a4e1af98085955a0770ba"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0078.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41521,
+      "sha1": "2ba9397affb4a959ff9b92caa0686a229ee7ed6b"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0079.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 45058,
+      "sha1": "fe6cc447c80512dc15c280cc7cb48aeb00f84286"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_view_0080.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37632,
+      "sha1": "29b5919cb5e0162ed4f81984fa9eac23b406264a"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0001.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42946,
+      "sha1": "84eaa133df322cf3778cc98cbb4294f500418d39"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0002.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26852,
+      "sha1": "c2e30574291f139d4799b6b422304f56454cadf0"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0003.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40130,
+      "sha1": "60d3ce24588150399f2a410cbdec39c09435401c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0004.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21446,
+      "sha1": "d25665a6dacce44cd7cc054abd00a5abca1deb97"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0005.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22959,
+      "sha1": "c3537b0f3659db02e27ebe3290f1f3c502804db8"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0006.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42932,
+      "sha1": "548658d2dd4ae32c79b0fc98d3fc0b460fb55d2f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0007.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30775,
+      "sha1": "d1f7f7d8594c0e277fe36fa44b5028adc94d88b0"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0008.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35332,
+      "sha1": "c92f5114b787ef2475561ff6cd0e3514bc5870d3"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0009.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31915,
+      "sha1": "0a4f024f3a28be6b431fdf096ce5382fc47a3c37"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0010.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29793,
+      "sha1": "3254d37e0b7a6ca3b272a9e8dc6cffa6ec8b8a51"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0011.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25191,
+      "sha1": "a56199131a6f77cccc7734a4dfd56e7f65b07baa"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0012.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34373,
+      "sha1": "4cd5726bd58d4b82805157e0927784fa415a5b47"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0013.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30736,
+      "sha1": "33fb62553d8ddcb63b31e321f887636fb74f2fa3"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0014.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26336,
+      "sha1": "a9cb817917da175f677a66d3ad51a8f368afb811"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0015.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28329,
+      "sha1": "fee508df71a26d5d87624a2ebe694a1aece211c8"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0016.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29490,
+      "sha1": "749ca673bea07e1e5fce67ec3e9b0cfcb8562dac"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0017.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37705,
+      "sha1": "f262679b723d36cab9e3a074c44ac2af4a3cae71"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0018.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 14755,
+      "sha1": "5c05bb939dbcc5dab28c24a4a1bdcfcb47a83fb9"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0019.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37396,
+      "sha1": "b611edd2b1f5844417ed0676319978ce1408afc5"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0020.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26508,
+      "sha1": "d87c077eea8afc3ec93eef64bacd837492796be8"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0021.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35292,
+      "sha1": "20af9802a9140cc7d62b90158a528d71c3f11dc1"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0022.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29461,
+      "sha1": "50951aec6440b610234eca821fb8a56ff6763b9c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0023.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39367,
+      "sha1": "0a9368565c512624ddf0ecbee724bfcdcab3ee14"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0024.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25108,
+      "sha1": "13988a2e66d0106de6776f2a12c9de7ff41ddcc6"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0025.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22015,
+      "sha1": "9df6dc44e8eae81dedaf8ceb77ff4635582720a1"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0026.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24775,
+      "sha1": "3dbb2ad35aac43fac51637198b20fd66da1b6a7c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0027.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33918,
+      "sha1": "95562667c1a8f7eb954b34731a5d9cb75ae2230f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0028.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35407,
+      "sha1": "901703a9d3eda1aa3220d38823eb8edadf8390e9"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0029.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23575,
+      "sha1": "f70672aa3a19e820835b6943fe18c202d34825fb"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0030.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24652,
+      "sha1": "2bdef5eab1c205f79f1b0d7dac097086fd9706c3"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0031.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27990,
+      "sha1": "04d5e2564bbe8a0043e7d908511f50c650b5006c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0032.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19632,
+      "sha1": "0b77ea58519807f05055f9e96815e5dd530cd314"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0033.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 47720,
+      "sha1": "9b49e122413c1e3ed1fa5d8daf0e727e7fae9f84"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0034.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31319,
+      "sha1": "4e2cef8a1dd01d39597cf92bdd9fa9e2a024b8c7"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0035.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22649,
+      "sha1": "c83630e7c5fc91eb4e3f22c539b9c98f68743d0f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0036.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28498,
+      "sha1": "6c2465da702af2894b6cb0b232cca342fcdf790f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0037.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19603,
+      "sha1": "e3e33a140460d7271eaaa647f5bf982afa7fc32e"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0038.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30008,
+      "sha1": "9ad86d7bf31ed9edca7f7bf9097c0483a827237c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0039.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32480,
+      "sha1": "5898021754e6f3294c11e5bcd6ce52a715f7e595"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0040.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24081,
+      "sha1": "14c0563fbffbdb3772611d3bfe65a6624dad2326"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0041.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22991,
+      "sha1": "0204c6ceebe7c3f6dadf0cd345bceb8e7d164a85"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0042.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24201,
+      "sha1": "7248ef3085df34efac6f14b62a6bca0f315a543f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0043.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40368,
+      "sha1": "c22078e6fe429616230e1919d49cce471015c7ed"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0044.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28465,
+      "sha1": "05ee169244c9a94e7d34a026fc99914593804b39"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0045.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23646,
+      "sha1": "c05511113b38052a909d32a06baf7a6c99972099"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0046.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35179,
+      "sha1": "6ffc77887ee765100db36283baaf38952183615c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0047.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27986,
+      "sha1": "12db5e11e1ff31ba1c2b658675f611d7b1695871"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0048.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 42099,
+      "sha1": "2dd30ffc6b628cf0962ae0489aca65175ddd3f8d"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0049.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 46887,
+      "sha1": "1d108b55140bc160bbbfdfb22c147ba851fcbf45"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0050.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27886,
+      "sha1": "4647e4ada2e3f795ecd02852d23b6449948864e0"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0051.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36206,
+      "sha1": "673f75880b77a3170956bb4f761692e4b83eb315"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0052.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38890,
+      "sha1": "b123d0a209d95ab9151ea10cec31d4acd6e7eb9c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0053.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25717,
+      "sha1": "7c7b73018d51fd90e79a519f8c36f5e9cc4253e6"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0054.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24269,
+      "sha1": "bac4808efbe739f797e80a43ab4c87bf671f0511"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0055.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23780,
+      "sha1": "3e96585ff8695fff0c7a0e0458ba18cd5d0e2eca"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0056.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22729,
+      "sha1": "a3f77c0c8f4295164eac8756d948bb023fa52d9a"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0057.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39706,
+      "sha1": "335f8a0a20180eaaa8f95628d0654c57cdec20d6"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0058.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32069,
+      "sha1": "5d47aec26d4b2f0677a59d567d4d4e3b7afc4de7"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0059.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19133,
+      "sha1": "77299f8fea084b1a0ce93985d60d1d1bf857b1d0"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0060.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24798,
+      "sha1": "aa051e391875c82210937c785cba13ea0b4ae975"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0061.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37291,
+      "sha1": "df4b8f111305030441007802ada2ade46abb88f1"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0062.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31773,
+      "sha1": "1b084f87e92a2f861dd8e2648f316cf3f2e64f1c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0063.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40293,
+      "sha1": "53a5b8995b14748169d09679ac54eeb9e560dc7b"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0064.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31475,
+      "sha1": "a7c0f34f132699ad16bd6056cbbc2cf32a485ac4"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0065.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31913,
+      "sha1": "37cdedcde23af4bab7975f2093531a60d02ac5ee"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0066.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37498,
+      "sha1": "bca0eac2e28c75d922e55a88832c0fefe435ed13"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0067.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37063,
+      "sha1": "cccfe7d6a52c816deb3807598d75436973c69d38"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0068.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38982,
+      "sha1": "3f48224b81044e7e36d152121b0190f5e326896e"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0069.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40949,
+      "sha1": "a0d1f595f2a85be872fba165fdc178203876ed2a"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0070.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23603,
+      "sha1": "7e7a9a8752dd5edd814f4dc4fc46d3baa03140aa"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0071.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40664,
+      "sha1": "def9e38ebcd19aec6303673b3b061a7b3d1f4264"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0072.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 50813,
+      "sha1": "7d672bf5857778f5613ecd356c005b9e9bad3a9f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0073.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19979,
+      "sha1": "6557e1c0dff3e8ef2dfc87d23a46c53fe8dc495c"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0074.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32127,
+      "sha1": "891e5ad016d567bd4c36c5855762255584ac1844"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0075.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36387,
+      "sha1": "7ffe32c1ce157b9d27d575ad27f0d02558e9f211"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0076.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25668,
+      "sha1": "3cd32ff1643c24d83e2f872c37e2a57d8561d059"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0077.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35975,
+      "sha1": "c62eac267447dba9a5177ffbc67eb6bd4fafa00a"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0078.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25269,
+      "sha1": "f19b90c3a14b3a76969b51ac6aab29728486ae5d"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0079.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30003,
+      "sha1": "9f71a1d5f58acf8f96c5086ec8a2a6599b671351"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_view_0080.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21398,
+      "sha1": "e6e6a557fdc7385496d81d3cb3892a37836f0ae5"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0001.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33220,
+      "sha1": "9138ef237d81d35239ea93d6620bac0902e3eda2"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0002.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24821,
+      "sha1": "b1a0fa579087ee36323b2154888d5a47d3749b9f"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0003.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23783,
+      "sha1": "44f2f1e14c175a511670804143f6451a225018ff"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0004.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38516,
+      "sha1": "61456885ae1b61e09caf805a0b798e98c3f860ae"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0005.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24925,
+      "sha1": "aae0463b39a9aefe757202769cf0d30c326fcfeb"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0006.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36663,
+      "sha1": "1be86a296b3735850641e93518fe686842009af2"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0007.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29706,
+      "sha1": "0be4a29cf4218c2419786d862ed4a2256575df86"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0008.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25111,
+      "sha1": "92d3455839c8627185ed25aff4704c08a456494e"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0009.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22743,
+      "sha1": "b44ea80f40d61c56ea722811056048f0394c2123"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0010.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27449,
+      "sha1": "9d6286316ce5ffb13070fc28c991eb5a28ef38c9"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0011.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 18190,
+      "sha1": "51fb7b4bedbb5c945f9fb941ef50fc8be46a4828"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0012.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28532,
+      "sha1": "085aabb49162f078da2d5e0096103948314621e1"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0013.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29628,
+      "sha1": "6c60d454deae34e9ba982385a8c6150db7826073"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0014.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27777,
+      "sha1": "39bcf1e7c546698dbee056b3a679653fcf9b386e"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0015.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22805,
+      "sha1": "794bd70a8427e7029cebf8f8b8650c1f66ad53a6"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0016.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31037,
+      "sha1": "a0b0c47a592a7082128bbe4d8926aee1acf03749"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0017.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27198,
+      "sha1": "5075d029869aeeec8ac84a6beeb2671f59bd90f4"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0018.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30607,
+      "sha1": "acc63160e187e4c66973729956e4e2c9318025c8"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0019.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27844,
+      "sha1": "a0017bcdc43381f7faf02b3794262bd772d0b0c6"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0020.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30006,
+      "sha1": "11a0435d995dbc936f4ee510f52b177af008ae8a"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0021.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26998,
+      "sha1": "5d0c9479956fe7a9e128d0bed6f276b8cfb1658b"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0022.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23702,
+      "sha1": "642307c3bb6f7fc5e7a104fe732d98b130eb981d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0023.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38653,
+      "sha1": "af65b1593e1b92b12016d620ffbc33caed17fea5"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0024.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 16866,
+      "sha1": "2bb12668ceefd3542fa18fa9ea0ef0d992d49943"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0025.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19180,
+      "sha1": "5c8639955ea9bdc567136f4823de12f8d4e37a03"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0026.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25312,
+      "sha1": "c4dc0d74b34e61a42f94f6fb5fd944aff6ad14be"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0027.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26889,
+      "sha1": "8b7659e44a9534996b409da6631a9b20064db5a7"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0028.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19382,
+      "sha1": "277ee5920516f3f7eb267fdb2df9e3703c980cd4"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0029.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27142,
+      "sha1": "f3ec0bd1688eaf5649266a00a319710430d2d1e5"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0030.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27061,
+      "sha1": "9f39aa63cbe26395d77bda1252bb17feb9ba22bf"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0031.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 18885,
+      "sha1": "258f2ab6c1de3c3e53d70dc5fd63529b17ac6479"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0032.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27905,
+      "sha1": "562cd14b7a677d8577a4d7214f91ba1509946483"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0033.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23877,
+      "sha1": "fca2123cd7d07e36bb87c4849d5594dc634473c4"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0034.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25604,
+      "sha1": "ab545704eb720b52ab5bcbe1bc6c44696e813c92"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0035.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33975,
+      "sha1": "8befc63f2042986944bbfad1444527962d2dfd21"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0036.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20723,
+      "sha1": "d708f48d518bd5196cbd9fd0114075581ca02739"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0037.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20450,
+      "sha1": "0153d7fe27b0bf894f76de863bfe6a7bf893f0e0"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0038.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26402,
+      "sha1": "e933d625e622a65e843512d02b718ea7b7890dba"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0039.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25676,
+      "sha1": "7b38473c29517f179b08ffcf35b0d143d59025d1"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0040.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41122,
+      "sha1": "66c824f311dbe0cb1abf41c7c937d0db56988480"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0041.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25523,
+      "sha1": "47b477dcc55214efbb0f544391e8bdc6c45ff390"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0042.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22234,
+      "sha1": "c1afff95cb6a047c2861e3b5204cf0740599f5a1"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0043.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29983,
+      "sha1": "44f73c7d5f8bc92029f13d464e4e67592faf622b"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0044.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19185,
+      "sha1": "baf11da7f6229e05ce3da6c530052cb9a681474d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0045.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26232,
+      "sha1": "b564fdcd2239e6940e7310a00ab479184f726754"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0046.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36468,
+      "sha1": "77297e0071ec7192c808e5d1eb3aaa46b005e53e"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0047.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33462,
+      "sha1": "6cddda4de227e6ee7b239219a2ae77a6fde21a67"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0048.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21103,
+      "sha1": "4258feae9bc2a44e11a66c89c85342f95a53001d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0049.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28317,
+      "sha1": "39d54243ef1c71aa0f1145ecbbcc65dfbedc86cb"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0050.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22280,
+      "sha1": "af1cf73fd3cc6b52781e8f185e06400f11bd668a"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0051.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29087,
+      "sha1": "4aaabd75c55f04ee9d9dd68ea2c8928f6a8aca09"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0052.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32739,
+      "sha1": "bda0fc80b5c69a355cc5fc789865895e9fda3dd9"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0053.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24171,
+      "sha1": "2dec4f0cf367d243416a47fff0bd2d29f6e4136d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0054.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32658,
+      "sha1": "e8643eedfe907c535859a3be64dbdded9f320302"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0055.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21548,
+      "sha1": "2eb1a75376a3729cd189be07a17fe4acb5f6a064"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0056.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20972,
+      "sha1": "53a53b7cc7d4d48e96c347394e7033ea90b1fe2b"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0057.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27523,
+      "sha1": "3b6f2f89984b4e155d4c1e978cb74b74c9b490e0"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0058.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29606,
+      "sha1": "5647f787dfe83d48d77b46d14679a7c3a6156acb"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0059.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24656,
+      "sha1": "ebe270de8334928d14c47071ee89eacdc09cebf9"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0060.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28095,
+      "sha1": "f33bf2ff78921dc51fbc783e9bcf5cee31522bd9"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0061.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31715,
+      "sha1": "2827f7b8c013af790951f1d57f8dd527d40346af"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0062.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24549,
+      "sha1": "a7451ab05c7daa7abfc68ed47bc986281b60c7a8"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0063.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37449,
+      "sha1": "5c7c585c3dc0e32b934c8dfdd335c4755bbcf09c"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0064.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23702,
+      "sha1": "2c113c50884de29c84c7c066ae2cf51512a0ebfb"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0065.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40501,
+      "sha1": "4e47e8af99081db2055cc49922f12e6f60f7d44a"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0066.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22821,
+      "sha1": "05fdd79ee45b751a77dda7f1afde30ea549d2cbc"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0067.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34391,
+      "sha1": "a2a1611d714fa5e86e9a9c6a96bb027184721c8d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0068.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20836,
+      "sha1": "24038374663b260879844845630c917ddc527776"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0069.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29951,
+      "sha1": "3f391097a4f09e20c59793f6c30b576a72be2fc3"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0070.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24177,
+      "sha1": "1b34b228a3b52feab40f413757aebcd319004871"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0071.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19790,
+      "sha1": "58e076083bee72a6ced0d3511385f04e752eab19"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0072.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 17604,
+      "sha1": "96fc8428c870937a9e18d072ab29d60311126d37"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0073.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22986,
+      "sha1": "bcbeba34105fc2e10810aee946414c3989136072"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0074.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26550,
+      "sha1": "2339071667c1370281d653ff5985f568c89ef481"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0075.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33212,
+      "sha1": "04cc6c64b3fc89fcf26bf3ab291746051888b5af"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0076.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26882,
+      "sha1": "0db6b88a255f2ec40a64102de7a30a0f2c1b58fa"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0077.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35870,
+      "sha1": "d7bda65572f4ff1aaaa97998718a6891919f3cf7"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0078.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24434,
+      "sha1": "579936e97a2022a0344400f919ed3222451c0cc2"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0079.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31611,
+      "sha1": "df4bfb7479049933f4f859a52310c2afab00188d"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_view_0080.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28479,
+      "sha1": "2e7fed53bad384547d5a4e44343fff36e0269ed0"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0001.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33847,
+      "sha1": "06b5bc2e49526d69f21d67ea2ebbf9b52ba845ea"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0002.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23868,
+      "sha1": "d53169df851d7db673e1797295ae259aa16620d8"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0003.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32806,
+      "sha1": "728c0f3cdb6aeea9a17e9d860261632cd455caa4"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0004.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28459,
+      "sha1": "90c33449e10ea885b80204b6d724e408c85ad221"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0005.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22413,
+      "sha1": "393b07daf7c44e38d0751e00ff7e84eccb5fe0ef"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0006.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32234,
+      "sha1": "4be79987ed4311c8b1b5c2b3d26df3bbc8f0c74d"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0007.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20284,
+      "sha1": "98973bef873066da6e06b6e836e2aab097285e92"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0008.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26419,
+      "sha1": "de4d4e1b66a610912d9c6f70e11a285f2404d763"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0009.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24750,
+      "sha1": "2ba375e3dcd7e0374b938ec143c3c20d717a041a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0010.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32784,
+      "sha1": "c5af744fbc9dfc53e4d592d794ae1478967102d9"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0011.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33164,
+      "sha1": "61d23d3790ac23fe54b4a7787042221176cd87c6"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0012.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30327,
+      "sha1": "755670de4bd1555734f014796cdd9e9bce230994"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0013.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30348,
+      "sha1": "00178b91101d3c3b37e3cff77ae737b83b9e2a8d"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0014.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34389,
+      "sha1": "d45f964bbd9b2874c7fc73f509379aa9730f3f9b"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0015.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29093,
+      "sha1": "ea464b5376226da1f86b47c7e4c2e640b3718ea5"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0016.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22890,
+      "sha1": "f1ec7069feacd25c13d24f094c6e1bec19068f49"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0017.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32056,
+      "sha1": "1756dd406399e2452cb50b91f58b1b41ab7ce946"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0018.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28257,
+      "sha1": "3760e61f028becff42cd27de49a553d182e94ffd"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0019.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30636,
+      "sha1": "ed6664b5f647c28d0b217db38eb43f5b377c4834"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0020.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21934,
+      "sha1": "ddf1f601a30b4798eb1335b4be49dc5346ce07c9"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0021.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 15074,
+      "sha1": "145f967e802aeda3029f5230c802d865ebb7daa7"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0022.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22371,
+      "sha1": "c2a1c5533a3c2b97bded85e74f2000084b4d83b1"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0023.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19264,
+      "sha1": "56ad7f6050363b6f3cd6bd8c906e901769dd769b"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0024.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22172,
+      "sha1": "24faa626a77743ac05cbe02573bf2fd2f6946051"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0025.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20025,
+      "sha1": "3754cadb28b0e513b5db00487669945d165ca7ea"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0026.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35884,
+      "sha1": "64a93e15a03c9d2e09d59314a79fef6ae8b7dfbf"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0027.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23182,
+      "sha1": "96c23a69ce294cc85553bcddc66ab42cbd4d99ee"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0028.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30271,
+      "sha1": "19c2ec8b5f7da5b211cbe29443c405b6ac51b05a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0029.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19752,
+      "sha1": "4d4274eaac6ebd2833cb010487bfe87058d369da"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0030.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19973,
+      "sha1": "21ecc49dc9f8de4eeed54009cab406a3e9af0914"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0031.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20142,
+      "sha1": "2ff85af42af98069afb37ebb0756943381ab061a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0032.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29878,
+      "sha1": "5554672e110ec813143a8ff8942254c616d37e88"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0033.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30402,
+      "sha1": "2984c4de8e8cc8636d01e4b8ead35ddbc3af664a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0034.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29520,
+      "sha1": "d5ed153a8536f714bc37037259adcb0da2b68b84"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0035.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29463,
+      "sha1": "e3a0943574adb19b87cd45c919e991b252e4bc2f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0036.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25326,
+      "sha1": "2392a5bdb4de4c1c855d31f19611c4f2f82b09c7"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0037.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33615,
+      "sha1": "8450d60a2b92037bc5bfbd22dc8297b71c8273d3"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0038.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30170,
+      "sha1": "278cb2a13cd85f7c8539413dad6aec276b5fca1f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0039.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24228,
+      "sha1": "86a39b40bccfb50320922dabc35e0ac6c0c2fbdd"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0040.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24898,
+      "sha1": "68ec512df9f9c4c9e3763d5217876ffd9c78120d"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0041.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26762,
+      "sha1": "afd934bebb988cf8a5d88966e360bde7e54c8ecc"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0042.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20392,
+      "sha1": "4fdfc0d906f891fbc217a96cf5e1c14e29d0d523"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0043.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25505,
+      "sha1": "f10edda9cb77129453a5329ad12ae61c08570908"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0044.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29952,
+      "sha1": "1c0552463a4e5122ddb01c73aed37c7197dfa2ab"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0045.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19243,
+      "sha1": "2b0b8a99424b2a0ad668e02056f691fb749f2912"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0046.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25824,
+      "sha1": "d3b941f4b53f334b874569c94a1c94d34af2d66c"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0047.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36963,
+      "sha1": "9a18aebd76f9cc58266af4fabb3a313532fe108b"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0048.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33007,
+      "sha1": "44693ce5712668e3cc7f4399db6415ab102cb89f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0049.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 18786,
+      "sha1": "30b07725139ff2740328e4a49f4dd0b47ac2abe6"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0050.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 17251,
+      "sha1": "9534933e94a93638c80510c659cd4a8235cf1204"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0051.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24724,
+      "sha1": "e4c09569400439454ebe4f1cfd4da536481f0431"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0052.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28535,
+      "sha1": "0d65592ac0b5ef775105f7eb5a7429aac0ced9f7"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0053.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20632,
+      "sha1": "7a0cccfd15dc2fe4e6aee724f6e41510be4a1004"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0054.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25893,
+      "sha1": "43b84e5e05cabeb8428868342dcd25bd4b91cdd3"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0055.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 32092,
+      "sha1": "e40d50c838cec3c41d94f5163bd5d75fb808ac27"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0056.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29153,
+      "sha1": "db8ffa93be3dec456e130bfed2ef62c4626d2c2f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0057.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38492,
+      "sha1": "65d1fa3fdc2e8c249e7d00ae42457a8c29acb751"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0058.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 18289,
+      "sha1": "8239736687b70d0f53331479438df8fdd20d44bc"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0059.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 15242,
+      "sha1": "1fe706f12d248cec35fd36c7e15f6485b1d0701e"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0060.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39541,
+      "sha1": "d9cb84fe43c76b1211f8ac19c84a83d7a4df48c2"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0061.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31917,
+      "sha1": "0fff9c9dc9685c6360ba0ecbaa5fa334a9ae0b37"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0062.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22933,
+      "sha1": "235ee0f34eea3eb2155e0adf65bbe1647ef94b43"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0063.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26340,
+      "sha1": "427f58b85cc07b7d5ddc2d7111812843de56efc2"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0064.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21991,
+      "sha1": "fa100dc142f38f7006671d2f32b5678ecc765bf1"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0065.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29543,
+      "sha1": "be4a62ea9267beaadcbce108aa8e6ed823d5df3a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0066.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25427,
+      "sha1": "c6c54449740c17ccfbaef1e0a10a798af889b19f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0067.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22327,
+      "sha1": "8b612c9623b143b83f11e20f7b74fd6cd2dcdf19"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0068.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20848,
+      "sha1": "022504c41a06e75a96bc54d127664f2ed0edb291"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0069.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40718,
+      "sha1": "c96a0802fafbb77ca6bb72b4f5489b28c9d2713a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0070.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26958,
+      "sha1": "b8bae9aba01a7e3775fb72d9dfd276e319c686af"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0071.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25655,
+      "sha1": "d5f7aa2b0c7e37d638049c914bae848ca10723e1"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0072.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29632,
+      "sha1": "0d27c6fc7f3aa050bb6d042424675e7c9222580f"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0073.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30812,
+      "sha1": "9073c959f6fea1b2e5769f177193d3ada078a22b"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0074.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31267,
+      "sha1": "3afdfc62746dfd7172dc8ed2337975b1611ee915"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0075.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23412,
+      "sha1": "daebeaa02e6dd84227e7a9d548a78c67bc991f2e"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0076.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22832,
+      "sha1": "e354b451145e87fd6d30d91b07dec0d8c633a18a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0077.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33688,
+      "sha1": "5b1f43a2a14ccdbd77fa27ca9755dd9cfdf758de"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0078.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19729,
+      "sha1": "4ab73511259c41a88b3481514714204120a811c4"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0079.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 22988,
+      "sha1": "cbbc29ed324e7f2faa63c69975a9ac1bc1b3bb73"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_view_0080.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28833,
+      "sha1": "55925d140d7dc00747d2fbcae82f3491c5e49c59"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0001.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38156,
+      "sha1": "06fd50423900a7f76ac7eb8c87f2c159cd34494c"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0002.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40933,
+      "sha1": "51a6e8b572ae0ca9258a8ad4b971e7b098cc22ac"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0003.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27470,
+      "sha1": "cda125de73c32d25c2373e913bd63d3425e0c3ff"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0004.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 44067,
+      "sha1": "d36c24dafe6950fcc9f7d565e743728c36b70aac"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0005.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25103,
+      "sha1": "66d69a116bf86bbc6d2e845ee7a7b8c53c999c4d"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0006.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 41423,
+      "sha1": "2d98311031e8726566134ae63b9ef95836aa3412"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0007.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31907,
+      "sha1": "f086e407962398bcab767def9088da8f3c1771b3"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0008.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26155,
+      "sha1": "9caf63ec190e3fd4881f7b125b2d73c0f0e06041"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0009.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25575,
+      "sha1": "a08fb92bdd00d5cf87d43e5d0416dfabcfdb0ccd"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0010.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35001,
+      "sha1": "568a0e50f751d42eb9ee65a147c2bb37dcf6b3d5"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0011.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27178,
+      "sha1": "ca1557bef72db6066899422adfec46b44c7bb3ad"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0012.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33565,
+      "sha1": "c849585e7bc1332b535337ac659422da46aebba7"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0013.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36484,
+      "sha1": "94b8d165214e2ae41d4a7a6c1cbe686034c91207"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0014.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33046,
+      "sha1": "cd32bbd880466f8ac4ca7c618f12b9157a07108d"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0015.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29619,
+      "sha1": "a14d601c39c3331d7e701bd7e0286d8b137fd8dc"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0016.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26989,
+      "sha1": "a8dc15e5db30c81bab7845ca55fc64e077290b0f"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0017.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23564,
+      "sha1": "22ce91809582fd16f7924c1d0fd992bce28d67fa"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0018.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28813,
+      "sha1": "b993b864a2d81cb22b13f32371da168b5b9233b3"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0019.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27633,
+      "sha1": "24f89dec8b4c1221e5d91d539bf7395302d7c05f"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0020.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30232,
+      "sha1": "b627eaba7a5082e185f77714297ab096056247cd"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0021.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33146,
+      "sha1": "9ccdc00be25b4a10c24c37ca33bdad123c7fa8c6"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0022.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24540,
+      "sha1": "40da41dc0b4f662fa0d9d9dde0ff15d74ac7264e"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0023.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43556,
+      "sha1": "a13d615b56a00d407e0ef573130375c240b10bad"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0024.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35424,
+      "sha1": "79d4a0e22a2c54df2ea88e70aad5436429b7bb06"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0025.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29569,
+      "sha1": "ec0cc05df818bb043a8fa48994be338d82aafc7b"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0026.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 49284,
+      "sha1": "9daebb2bc437152755c16001acddcb089dd6eff6"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0027.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34586,
+      "sha1": "c82c1d1ec93f585d62893cb1b84297364401277e"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0028.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37305,
+      "sha1": "c6c38c8c830e163485449ccb65ccdf335a1d56b5"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0029.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28212,
+      "sha1": "13a6c02a9bffa14c670c3146c62b9192b06f67de"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0030.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26542,
+      "sha1": "b6159ba1336037bb4c76d3abf888b761862fc4fc"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0031.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28861,
+      "sha1": "e03afd281c3d4ccc6665891497a303cceec98cfa"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0032.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30870,
+      "sha1": "b19807e56722840f64852f4b1695b84245fb4698"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0033.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37982,
+      "sha1": "2ab8d9f71eb8479e793c3636afbcc83d573fe736"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0034.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31152,
+      "sha1": "146a02c8db49a0621a41be724b0e9d5e97664849"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0035.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31626,
+      "sha1": "0bbfd556e4e83ea7b2edd54757d4f68d46edd121"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0036.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20890,
+      "sha1": "06d75c171ed9da343240171c9d740d195ff427f1"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0037.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29455,
+      "sha1": "3912a2430c78435a47add08cd7fa8cf476c55023"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0038.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24802,
+      "sha1": "eeab96119e81a0997da1c0ec0ab629e3b8cbe450"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0039.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39802,
+      "sha1": "bd6523daba11f37deb95cbd9fdbcaffa34362ba1"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0040.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24439,
+      "sha1": "77c82ab4fc5d8b5d4bdbe475b3fec895405e62f3"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0041.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28144,
+      "sha1": "369d535b13e824672f56ac70fde8830d739067a9"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0042.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 30280,
+      "sha1": "99cb17aa9cfed71f68ef60848bfca580e4769db5"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0043.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38321,
+      "sha1": "b99ad44fa66d641b564897b63c64939104270082"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0044.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29575,
+      "sha1": "258600d4baf5a1acc3ebd02cf1e749693e33472a"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0045.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 46121,
+      "sha1": "e0d3a1dbb09eee13372293d44ff230eabcc12dd4"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0046.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26333,
+      "sha1": "1d8d8fc8b3c19764db3102b605ca7de2b72fd147"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0047.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 29243,
+      "sha1": "53c84b9e05ce3d8cee68eec341af1d596065ee88"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0048.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34183,
+      "sha1": "1923858c9f08cd37c3a5b1b704e7c979bc1e28a4"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0049.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 40411,
+      "sha1": "f4278146a372556dcae2d04bea8fae1784845e03"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0050.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25771,
+      "sha1": "6b376e269427055a8a859baeaaa01f79fe46de47"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0051.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33845,
+      "sha1": "0645ce5f38b538ca85fd30464835c2f0c3ff61e3"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0052.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 20306,
+      "sha1": "0fae3c4777aa3cfe4fb09616a460ca519dbaaa93"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0053.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23786,
+      "sha1": "65901b1f10b6d5309fbe4f705a3f43754d9f268b"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0054.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 16708,
+      "sha1": "059c7d2b9ea9c702ed5cb95dba6a56be546b68ae"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0055.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 26678,
+      "sha1": "3a6fc22decdd64bb07c810cc53adf54c1122974c"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0056.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 34606,
+      "sha1": "f3d318e09be8da2c23fa8f95e3d150abae463aef"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0057.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35009,
+      "sha1": "73f84f6161dca18007bef394c1ea3b73787fb862"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0058.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39477,
+      "sha1": "bed4ad4eec4158fa66ac673f5a33f04e7543496a"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0059.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28089,
+      "sha1": "5b4f534b3280c79aed3016626e75cb0938a148cd"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0060.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 24857,
+      "sha1": "5eeaef8cf640625822146474f2e95fd7cf7201c2"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0061.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 21804,
+      "sha1": "e1610a06daec3e7f59fde56eb1303a51c519ba0e"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0062.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23812,
+      "sha1": "0e3f2ea3fb8d5c44a43765c141a7d73aa29a53a3"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0063.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33543,
+      "sha1": "198b8aebd27961f52c7592f48bec40a430b823fe"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0064.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 23089,
+      "sha1": "4df0708ca81e6b3d878ac30e42fedc92432ba3b7"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0065.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 37434,
+      "sha1": "c94c32f7ff433f3230f6c2c8cc024a1022c78a78"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0066.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 19917,
+      "sha1": "d429b5226cf4d8a24e4a038eeb183da114c3b53c"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0067.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27588,
+      "sha1": "dcae931c4be6df1b8ee74ea99eb9168d8a9b14c0"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0068.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 33720,
+      "sha1": "a2185321192c119a6ca9b6ab1c2a4153015bee43"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0069.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 27928,
+      "sha1": "9bce4bbcb95e851feb79a05086e390d97c191883"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0070.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43978,
+      "sha1": "97439d984831951e0ce46dea759e3895808ce915"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0071.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 36782,
+      "sha1": "09ce071181ede8d8660f38cd7d3dca9916d44a4f"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0072.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 25192,
+      "sha1": "58a392269c90af7381e5e9fb9a94253ac6f21014"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0073.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35236,
+      "sha1": "6dc8280922158de9e05ccd27517a3b6edd43f508"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0074.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 28958,
+      "sha1": "6368c56c9f2967937fd8255fa497fa56a6a66209"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0075.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 43187,
+      "sha1": "07cd1729316496ad19f7351e31386661035ce6ce"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0076.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 31112,
+      "sha1": "eebc4dc9af0a983d71ec5561c6e0ead069c0613e"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0077.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 39469,
+      "sha1": "af9a0a12d4c90e52a874b0c653c65f47f471c7a5"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0078.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 17188,
+      "sha1": "37f2568297d77b97c6b072c4bd54d5e74a0fa6f1"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0079.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 35177,
+      "sha1": "f3a3cb2efdd7f2ff44864601bde7de7da4a490ae"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_view_0080.png",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB",
+      "file_size": 38623,
+      "sha1": "af0042c038d25df0171dd6f2ad22f2b5e830645c"
+    }
+  ]
+}

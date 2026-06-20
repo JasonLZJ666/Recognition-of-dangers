@@ -1,0 +1,157 @@
+{
+  "classes": [
+    "explosion",
+    "falling_objects",
+    "falling_rocks",
+    "flammable",
+    "water_hazard"
+  ],
+  "matrix": [
+    [
+      24,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      24,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      12
+    ]
+  ],
+  "summary": {
+    "loss": 1.0127351908456712,
+    "top1": 1.0,
+    "top3": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "support": 84,
+    "classes": [
+      "explosion",
+      "falling_objects",
+      "falling_rocks",
+      "flammable",
+      "water_hazard"
+    ],
+    "confusion_matrix": [
+      [
+        24,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        24,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": "explosion",
+        "support": 24,
+        "predicted": 24,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_objects",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_rocks",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "flammable",
+        "support": 24,
+        "predicted": 24,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "water_hazard",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ]
+  }
+}

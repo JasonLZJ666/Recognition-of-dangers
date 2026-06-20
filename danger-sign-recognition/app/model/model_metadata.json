@@ -29,10 +29,10 @@
     0.224,
     0.225
   ],
-  "sourceCheckpoint": "C:\\Users\\23950\\Desktop\\proj\\danger-sign-recognition\\model\\artifacts\\best_danger_sign_model.pt",
+  "sourceCheckpoint": "model\\artifacts_viewpoint\\best_danger_sign_model.pt",
   "arch": "efficientnet_b0",
-  "bestEpoch": 1,
-  "bestValAcc": 1.0,
-  "bestMetricName": null,
-  "bestMetricValue": null
+  "bestEpoch": 15,
+  "bestValAcc": 0.9945701357466064,
+  "bestMetricName": "val_macro_f1",
+  "bestMetricValue": 0.9945615449320672
 }

@@ -90,6 +90,7 @@ external_datasets/prepared/ghs_pictograms/
 dataset_extended/
 dataset_all/
 dataset_viewpoint/
+dataset_test_viewpoint/
 ```
 
 其中：
@@ -99,6 +100,7 @@ dataset_viewpoint/
 - `dataset_extended/` 是当前 5 类危险标志训练集的增强版本，保留原有 5 类目录，并把 GHS 易燃/爆炸图标补充进 `flammable` 和 `explosion` 类，适合直接训练网页前端对应的 5 类模型。
 - `dataset_all/` 是方案 B 使用的 15 类混合数据集，由 `dataset_extended/` 的 5 类危险标志和 `gtsrb_warning/` 的 10 类交通警告标志合并而成，共 5557 张图，适合展示更大规模的训练实验。
 - `dataset_viewpoint/` 是最终推荐使用的 5 类视角/光照增强数据集，只包含附件里的 5 种危险标志，不增加新类别；每类 221 张，共 1105 张，包含旋转、缩放、仿射倾斜、亮度变化、对比度变化、轻微模糊、阴影和背景扰动。
+- `dataset_test_viewpoint/` 是独立测试集，只包含附件里的 5 种危险标志，不增加新类别；每类 80 张，共 400 张，使用不同随机种子生成，不复制干净原图，适合在训练完成后做测试集评估。
 
 最终网页模型建议使用 `dataset_viewpoint/` 训练，因为最终识别目标仍然是附件里的 5 类危险标志，只是拍摄时会出现不同角度和光线：
 
@@ -106,6 +108,13 @@ dataset_viewpoint/
 python model\build_viewpoint_dataset.py --source dataset --out dataset_viewpoint --per-class 220 --size 320
 python model\train_model.py --dataset dataset_viewpoint --out model\artifacts_viewpoint --arch efficientnet_b0 --pretrained --freeze-backbone --epochs 30 --batch-size 16 --repeats 1
 python model\export_onnx.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt
+```
+
+生成独立测试集并评估训练结果：
+
+```powershell
+python model\build_viewpoint_dataset.py --source dataset --out dataset_test_viewpoint --per-class 80 --size 320 --seed 9090 --no-source-copy
+python model\evaluate_model.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset dataset_test_viewpoint --out model\artifacts_viewpoint\test_classification_report.json --repeats 1
 ```
 
 使用增强后的 5 类数据训练当前网页模型：

@@ -1,0 +1,7 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Downloaded third-party raw datasets are kept locally, not in Git.
+danger-sign-recognition/external_datasets/raw/
+danger-sign-recognition/external_datasets/**/*.zip

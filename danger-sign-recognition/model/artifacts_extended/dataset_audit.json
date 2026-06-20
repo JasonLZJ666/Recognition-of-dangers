@@ -1,0 +1,117 @@
+{
+  "dataset_dir": "dataset_extended",
+  "class_count": 5,
+  "image_count": 7,
+  "classes": {
+    "explosion": {
+      "image_count": 2,
+      "min_width": 512,
+      "max_width": 1376,
+      "min_height": 512,
+      "max_height": 1376
+    },
+    "falling_objects": {
+      "image_count": 1,
+      "min_width": 1345,
+      "max_width": 1345,
+      "min_height": 1345,
+      "max_height": 1345
+    },
+    "falling_rocks": {
+      "image_count": 1,
+      "min_width": 1469,
+      "max_width": 1469,
+      "min_height": 1469,
+      "max_height": 1469
+    },
+    "flammable": {
+      "image_count": 2,
+      "min_width": 512,
+      "max_width": 1480,
+      "min_height": 512,
+      "max_height": 1480
+    },
+    "water_hazard": {
+      "image_count": 1,
+      "min_width": 1462,
+      "max_width": 1462,
+      "min_height": 1462,
+      "max_height": 1462
+    }
+  },
+  "global": {
+    "min_width": 512,
+    "max_width": 1480,
+    "min_height": 512,
+    "max_height": 1480,
+    "min_file_size": 17193,
+    "max_file_size": 84787,
+    "duplicate_group_count": 0
+  },
+  "duplicates": [],
+  "images": [
+    {
+      "class_id": "explosion",
+      "path": "explosion\\explosion_001.png",
+      "width": 1376,
+      "height": 1376,
+      "mode": "RGB",
+      "file_size": 84787,
+      "sha1": "74303153d4728893a203dc79f98b547fca594d1b"
+    },
+    {
+      "class_id": "explosion",
+      "path": "explosion\\ghs_explosion_001.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGB",
+      "file_size": 29791,
+      "sha1": "16f55c60bf1f0463a097526ffa07279f75e1142f"
+    },
+    {
+      "class_id": "falling_objects",
+      "path": "falling_objects\\falling_objects_001.png",
+      "width": 1345,
+      "height": 1345,
+      "mode": "RGB",
+      "file_size": 43570,
+      "sha1": "648c3da01935eeafab4e4638c2311ab530a3530f"
+    },
+    {
+      "class_id": "falling_rocks",
+      "path": "falling_rocks\\falling_rocks_001.png",
+      "width": 1469,
+      "height": 1469,
+      "mode": "RGB",
+      "file_size": 59762,
+      "sha1": "996380e54d0094ac7af58df46737e133eb82b30a"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\flammable_001.png",
+      "width": 1480,
+      "height": 1480,
+      "mode": "RGB",
+      "file_size": 57927,
+      "sha1": "ade25dc124fd05bfe8f84da2ef27696a8ba1d265"
+    },
+    {
+      "class_id": "flammable",
+      "path": "flammable\\ghs_flammable_001.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGB",
+      "file_size": 17193,
+      "sha1": "6c63560acca264105eb5a21294b527357ffe4195"
+    },
+    {
+      "class_id": "water_hazard",
+      "path": "water_hazard\\water_hazard_001.png",
+      "width": 1462,
+      "height": 1462,
+      "mode": "RGB",
+      "file_size": 58275,
+      "sha1": "f953e0a42949276e22ffaa9d4878c21f3732281b"
+    }
+  ]
+}

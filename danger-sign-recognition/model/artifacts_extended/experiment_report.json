@@ -1,0 +1,343 @@
+{
+  "project": "danger-sign-recognition",
+  "best_metric": {
+    "name": "val_macro_f1",
+    "value": 1.0,
+    "epoch": 1
+  },
+  "final_epoch": {
+    "epoch": 9,
+    "train_loss": 0.46437095403671264,
+    "train_top1": 0.9380952380952381,
+    "train_top3": 0.9880952380952381,
+    "val_loss": 0.27035111046972726,
+    "val_top1": 1.0,
+    "val_top3": 1.0,
+    "val_macro_f1": 1.0,
+    "val_weighted_f1": 1.0,
+    "lr": 0.00015877852522924732,
+    "seconds": 24.956778699997813
+  },
+  "metadata": {
+    "arch": "efficientnet_b0",
+    "pretrained": true,
+    "freeze_backbone": true,
+    "classes": [
+      "explosion",
+      "falling_objects",
+      "falling_rocks",
+      "flammable",
+      "water_hazard"
+    ],
+    "class_to_idx": {
+      "explosion": 0,
+      "falling_objects": 1,
+      "falling_rocks": 2,
+      "flammable": 3,
+      "water_hazard": 4
+    },
+    "image_size": 224,
+    "training_config": {
+      "dataset": "dataset_extended",
+      "out": "model\\artifacts_extended",
+      "arch": "efficientnet_b0",
+      "pretrained": true,
+      "freeze_backbone": true,
+      "epochs": 30,
+      "batch_size": 16,
+      "image_size": 224,
+      "repeats": 120,
+      "lr": 0.0002,
+      "weight_decay": 0.0001,
+      "dropout": 0.35,
+      "label_smoothing": 0.05,
+      "patience": 8,
+      "min_delta": 0.0,
+      "metric_for_best": "val_macro_f1",
+      "seed": 2026,
+      "workers": 0,
+      "auto_augment": true,
+      "amp": false,
+      "deterministic": false
+    },
+    "parameter_summary": {
+      "total": 4336769,
+      "trainable": 329221,
+      "frozen": 4007548,
+      "trainable_ratio": 0.07591388888824838
+    },
+    "estimated_model_size_mb": 16.704,
+    "trainable_layers_preview": [
+      "classifier.1.weight",
+      "classifier.1.bias",
+      "classifier.4.weight",
+      "classifier.4.bias"
+    ],
+    "optimizer": {
+      "name": "AdamW",
+      "param_groups": [
+        {
+          "group": 0,
+          "lr": 0.0002,
+          "weight_decay": 0.0001,
+          "params": 329221
+        }
+      ]
+    },
+    "environment": {
+      "python": "3.14.5",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch": "2.12.1+cpu",
+      "cuda_available": false,
+      "cuda_device": null,
+      "device": "cpu",
+      "amp": false
+    },
+    "dataset_audit": {
+      "class_count": 5,
+      "image_count": 7,
+      "global": {
+        "min_width": 512,
+        "max_width": 1480,
+        "min_height": 512,
+        "max_height": 1480,
+        "min_file_size": 17193,
+        "max_file_size": 84787,
+        "duplicate_group_count": 0
+      }
+    },
+    "best_epoch": 1,
+    "best_metric_name": "val_macro_f1",
+    "best_metric_value": 1.0
+  },
+  "validation_summary": {
+    "loss": 1.0127351908456712,
+    "top1": 1.0,
+    "top3": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "support": 84,
+    "classes": [
+      "explosion",
+      "falling_objects",
+      "falling_rocks",
+      "flammable",
+      "water_hazard"
+    ],
+    "confusion_matrix": [
+      [
+        24,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        24,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": "explosion",
+        "support": 24,
+        "predicted": 24,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_objects",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_rocks",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "flammable",
+        "support": 24,
+        "predicted": 24,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "water_hazard",
+        "support": 12,
+        "predicted": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.353471885408674,
+      "train_top1": 0.5821428571428572,
+      "train_top3": 0.8380952380952381,
+      "val_loss": 1.0127351908456712,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00019945218953682734,
+      "seconds": 27.956307200016454
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9498840116319203,
+      "train_top1": 0.8154761904761905,
+      "train_top3": 0.9654761904761905,
+      "val_loss": 0.6968693648065839,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00019781476007338058,
+      "seconds": 25.554503299994394
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7161516751561846,
+      "train_top1": 0.8833333333333333,
+      "train_top3": 0.9857142857142858,
+      "val_loss": 0.5057229314531598,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00019510565162951537,
+      "seconds": 25.16320629999973
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5992587492579505,
+      "train_top1": 0.9011904761904762,
+      "train_top3": 0.9857142857142858,
+      "val_loss": 0.38412545692353023,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00019135454576426006,
+      "seconds": 38.17662369998288
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5550353387991588,
+      "train_top1": 0.8976190476190476,
+      "train_top3": 0.9761904761904762,
+      "val_loss": 0.34895165051732746,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00018660254037844388,
+      "seconds": 54.619708199985325
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.4758421758810679,
+      "train_top1": 0.930952380952381,
+      "train_top3": 0.986904761904762,
+      "val_loss": 0.31665409746624174,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00018090169943749476,
+      "seconds": 43.79530279999017
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5045215623719351,
+      "train_top1": 0.9071428571428571,
+      "train_top3": 0.9904761904761905,
+      "val_loss": 0.2838694779645829,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00017431448254773944,
+      "seconds": 26.51644470001338
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4971786575657981,
+      "train_top1": 0.9071428571428571,
+      "train_top3": 0.9809523809523809,
+      "val_loss": 0.27749874762126375,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00016691306063588583,
+      "seconds": 40.08966919998056
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.46437095403671264,
+      "train_top1": 0.9380952380952381,
+      "train_top3": 0.9880952380952381,
+      "val_loss": 0.27035111046972726,
+      "val_top1": 1.0,
+      "val_top3": 1.0,
+      "val_macro_f1": 1.0,
+      "val_weighted_f1": 1.0,
+      "lr": 0.00015877852522924732,
+      "seconds": 24.956778699997813
+    }
+  ]
+}
