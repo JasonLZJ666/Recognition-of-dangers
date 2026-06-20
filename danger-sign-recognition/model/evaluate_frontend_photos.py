@@ -31,7 +31,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--dataset", type=Path, default=PROJECT_ROOT / "test_inputs" / "frontend_photos")
     parser.add_argument("--crop", choices=["browser", "full", "padded", "square"], default="browser")
-    parser.add_argument("--padding", type=float, default=0.18)
+    parser.add_argument("--padding", type=float, default=0.28)
     parser.add_argument("--out", type=Path, default=None, help="Optional JSON report path")
     return parser.parse_args()
 

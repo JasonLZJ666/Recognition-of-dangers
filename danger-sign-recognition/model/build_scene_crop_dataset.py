@@ -41,7 +41,7 @@ def parse_args() -> argparse.Namespace:
         help="Limit copied base/viewpoint images per class; omit to copy all base images",
     )
     parser.add_argument("--size", type=int, default=320)
-    parser.add_argument("--padding", type=float, default=0.18)
+    parser.add_argument("--padding", type=float, default=0.28)
     parser.add_argument("--seed", type=int, default=6202126)
     parser.add_argument("--keep-scenes", action="store_true", help="Also save the full generated photos for inspection")
     return parser.parse_args()
