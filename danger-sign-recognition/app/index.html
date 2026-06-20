@@ -9,38 +9,55 @@
   <body>
     <section id="loginScreen" class="login-shell">
       <div class="login-panel">
-        <div class="login-brand">
-          <div class="tju-mark" aria-hidden="true">
-            <span>TJU</span>
-            <small>1895</small>
+        <div class="login-copy">
+          <div class="login-brand">
+            <div class="tju-mark" aria-hidden="true">
+              <span>TJU</span>
+              <small>1895</small>
+            </div>
+            <div>
+              <p class="eyebrow">TIANJIN UNIVERSITY</p>
+              <h1>危险标志识别系统</h1>
+              <p class="motto">实事求是 · 智能安全实验平台</p>
+            </div>
           </div>
-          <div>
-            <p class="eyebrow">TIANJIN UNIVERSITY</p>
-            <h1>危险标志识别系统</h1>
-            <p class="motto">实事求是 · 智能安全实验平台</p>
+
+          <div class="login-showcase" aria-label="系统能力概览">
+            <p class="product-eyebrow">ONNX Runtime Web</p>
+            <h2>在浏览器中完成<br />危险标志识别。</h2>
+            <p>图片、视频、摄像头三类输入统一接入，模型推理和结果展示都在前端完成。</p>
+            <div class="showcase-signs" aria-hidden="true">
+              <img src="assets/signs/flammable.png" alt="" />
+              <img src="assets/signs/falling_rocks.png" alt="" />
+              <img src="assets/signs/water_hazard.png" alt="" />
+              <img src="assets/signs/falling_objects.png" alt="" />
+              <img src="assets/signs/explosion.png" alt="" />
+            </div>
           </div>
         </div>
 
-        <form id="loginForm" class="login-form">
-          <label>
-            账号
-            <input id="username" name="username" type="text" autocomplete="username" value="admin" />
-          </label>
-          <label>
-            密码
-            <input id="password" name="password" type="password" autocomplete="current-password" value="123456" />
-          </label>
-          <button class="primary-action" type="submit">
-            <span class="icon" aria-hidden="true">↪</span>
-            登录系统
-          </button>
-          <p id="loginError" class="form-error" hidden>账号或密码错误</p>
-        </form>
+        <div class="login-card">
+          <form id="loginForm" class="login-form">
+            <label>
+              账号
+              <input id="username" name="username" type="text" autocomplete="username" value="admin" />
+            </label>
+            <label>
+              密码
+              <input id="password" name="password" type="password" autocomplete="current-password" value="123456" />
+            </label>
+            <button class="primary-action" type="submit">
+              <span class="icon" aria-hidden="true">↪</span>
+              登录系统
+            </button>
+            <p id="loginError" class="form-error" hidden>账号或密码错误</p>
+          </form>
 
-        <div class="login-meta" aria-label="系统信息">
-          <span>EfficientNet-B0</span>
-          <span>5 类标志</span>
-          <span>ONNX 前端推理</span>
+          <div class="login-meta" aria-label="系统信息">
+            <span>EfficientNet-B0</span>
+            <span>5 类标志</span>
+            <span>ONNX 前端推理</span>
+          </div>
         </div>
       </div>
     </section>

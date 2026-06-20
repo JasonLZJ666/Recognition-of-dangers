@@ -1,5 +1,5 @@
 {
-  "dataset_dir": "C:\\Users\\23950\\Desktop\\proj\\danger-sign-recognition\\dataset",
+  "dataset_dir": "danger-sign-recognition\\dataset",
   "class_count": 5,
   "image_count": 5,
   "classes": {

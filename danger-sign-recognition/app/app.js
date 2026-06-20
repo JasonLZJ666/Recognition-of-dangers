@@ -41,6 +41,9 @@ const MODEL_METADATA_URL = "model/model_metadata.json";
 const MODEL_BASE_PATH = "model/";
 const WASM_BASE_PATH = "vendor/onnxruntime-web/";
 const SAMPLE_SIZE = 72;
+const PREVIEW_PARAMS = new URLSearchParams(window.location.search);
+const PREVIEW_MODE = PREVIEW_PARAMS.get("preview") === "1";
+const SKIP_ONNX = PREVIEW_PARAMS.get("noOnnx") === "1";
 const state = {
   mode: "image",
   references: [],
@@ -354,13 +357,13 @@ function drawPreview(source, result) {
   const offsetX = (canvas.width - drawWidth) / 2;
   const offsetY = (canvas.height - drawHeight) / 2;
 
-  ctx.fillStyle = "#0d2036";
+  ctx.fillStyle = "#050505";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(source, offsetX, offsetY, drawWidth, drawHeight);
 
   if (result?.bounds) {
     ctx.save();
-    ctx.strokeStyle = "#f2b705";
+    ctx.strokeStyle = "#0071e3";
     ctx.lineWidth = 4;
     ctx.setLineDash([16, 8]);
     ctx.strokeRect(
@@ -375,17 +378,17 @@ function drawPreview(source, result) {
 
 function drawIdleCanvas() {
   const canvas = els.previewCanvas;
-  ctx.fillStyle = "#0d2036";
+  ctx.fillStyle = "#050505";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.save();
-  ctx.strokeStyle = "rgba(255,255,255,0.18)";
+  ctx.strokeStyle = "rgba(255,255,255,0.2)";
   ctx.lineWidth = 2;
   ctx.setLineDash([10, 10]);
   ctx.strokeRect(80, 70, canvas.width - 160, canvas.height - 140);
 
-  ctx.fillStyle = "rgba(255,255,255,0.92)";
-  ctx.font = "700 32px Microsoft YaHei, Segoe UI, Arial";
+  ctx.fillStyle = "rgba(255,255,255,0.96)";
+  ctx.font = "700 34px Microsoft YaHei, Segoe UI, Arial";
   ctx.textAlign = "center";
   ctx.fillText("天津大学危险标志识别", canvas.width / 2, canvas.height / 2 - 18);
 
@@ -640,6 +643,12 @@ async function loadReferences() {
   state.references = loaded;
   setStatus("标准样本模型就绪");
 
+  if (SKIP_ONNX) {
+    setRuntime("Preview");
+    await analyzeSource(loaded[0].image, "界面预览模式，当前跳过 ONNX 加载");
+    return;
+  }
+
   try {
     await initializeOnnxModel();
     await analyzeSource(loaded[0].image, "ONNX训练模型已导入网页端");
@@ -717,6 +726,10 @@ function bindEvents() {
 renderSamples();
 bindEvents();
 drawIdleCanvas();
+if (PREVIEW_MODE) {
+  els.loginScreen.classList.add("hidden");
+  els.appScreen.classList.remove("hidden");
+}
 loadReferences().catch(() => {
   setStatus("加载失败");
   setMessage("样本加载失败，请检查 assets/signs 目录", true);

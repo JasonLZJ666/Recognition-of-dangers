@@ -1,0 +1,123 @@
+{
+  "checkpoint": "danger-sign-recognition\\model\\artifacts\\best_danger_sign_model.pt",
+  "dataset": "C:\\Users\\23950\\Desktop\\proj\\danger-sign-recognition\\dataset",
+  "device": "cpu",
+  "parameter_summary": {
+    "total": 4336769,
+    "trainable": 4336769,
+    "frozen": 0,
+    "trainable_ratio": 1.0
+  },
+  "estimated_model_size_mb": 16.704,
+  "summary": {
+    "loss": 1.0710306644439698,
+    "top1": 1.0,
+    "top3": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "support": 20,
+    "classes": [
+      "explosion",
+      "falling_objects",
+      "falling_rocks",
+      "flammable",
+      "water_hazard"
+    ],
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": "explosion",
+        "support": 4,
+        "predicted": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_objects",
+        "support": 4,
+        "predicted": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "falling_rocks",
+        "support": 4,
+        "predicted": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "flammable",
+        "support": 4,
+        "predicted": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "class_id": "water_hazard",
+        "support": 4,
+        "predicted": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ]
+  }
+}
