@@ -1,0 +1,32 @@
+[
+  {
+    "id": "flammable",
+    "name": "易燃危险",
+    "risk": "高风险",
+    "action": "隔离火源，保持通风"
+  },
+  {
+    "id": "falling_rocks",
+    "name": "落石危险",
+    "risk": "高风险",
+    "action": "避开边坡，快速通过"
+  },
+  {
+    "id": "water_hazard",
+    "name": "水域危险",
+    "risk": "中高风险",
+    "action": "远离水边，设置围挡"
+  },
+  {
+    "id": "falling_objects",
+    "name": "高处坠物",
+    "risk": "高风险",
+    "action": "佩戴安全帽，避开作业区"
+  },
+  {
+    "id": "explosion",
+    "name": "爆炸危险",
+    "risk": "极高风险",
+    "action": "停止明火，撤离危险区"
+  }
+]

@@ -1,0 +1,2 @@
+epoch,train_loss,train_top1,train_top3,val_loss,val_top1,val_top3,val_macro_f1,val_weighted_f1,lr,seconds
+1,1.693851399421692,0.1,0.5,1.617717981338501,0.2,0.6,0.06666666666666668,0.06666666666666668,0.0,0.5613063999917358

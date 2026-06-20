@@ -1,0 +1,38 @@
+{
+  "model": "danger_sign_model.onnx",
+  "externalData": "danger_sign_model.onnx.data",
+  "externalDataPath": "danger_sign_model.onnx.data",
+  "inputName": "input",
+  "outputName": "logits",
+  "classes": [
+    "explosion",
+    "falling_objects",
+    "falling_rocks",
+    "flammable",
+    "water_hazard"
+  ],
+  "classToIdx": {
+    "explosion": 0,
+    "falling_objects": 1,
+    "falling_rocks": 2,
+    "flammable": 3,
+    "water_hazard": 4
+  },
+  "imageSize": 224,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "sourceCheckpoint": "C:\\Users\\23950\\Desktop\\proj\\danger-sign-recognition\\model\\artifacts\\best_danger_sign_model.pt",
+  "arch": "efficientnet_b0",
+  "bestEpoch": 1,
+  "bestValAcc": 1.0,
+  "bestMetricName": null,
+  "bestMetricValue": null
+}

@@ -1,0 +1,46 @@
+{
+  "classes": [
+    "explosion",
+    "falling_objects",
+    "falling_rocks",
+    "flammable",
+    "water_hazard"
+  ],
+  "matrix": [
+    [
+      12,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      12,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      12
+    ]
+  ]
+}

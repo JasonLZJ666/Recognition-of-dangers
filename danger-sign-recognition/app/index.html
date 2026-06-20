@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>天津大学危险标志识别系统</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="loginScreen" class="login-shell">
+      <div class="login-panel">
+        <div class="login-brand">
+          <div class="tju-mark" aria-hidden="true">
+            <span>TJU</span>
+            <small>1895</small>
+          </div>
+          <div>
+            <p class="eyebrow">TIANJIN UNIVERSITY</p>
+            <h1>危险标志识别系统</h1>
+            <p class="motto">实事求是 · 智能安全实验平台</p>
+          </div>
+        </div>
+
+        <form id="loginForm" class="login-form">
+          <label>
+            账号
+            <input id="username" name="username" type="text" autocomplete="username" value="admin" />
+          </label>
+          <label>
+            密码
+            <input id="password" name="password" type="password" autocomplete="current-password" value="123456" />
+          </label>
+          <button class="primary-action" type="submit">
+            <span class="icon" aria-hidden="true">↪</span>
+            登录系统
+          </button>
+          <p id="loginError" class="form-error" hidden>账号或密码错误</p>
+        </form>
+
+        <div class="login-meta" aria-label="系统信息">
+          <span>EfficientNet-B0</span>
+          <span>5 类标志</span>
+          <span>ONNX 前端推理</span>
+        </div>
+      </div>
+    </section>
+
+    <main id="appScreen" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <div class="tju-mark small" aria-hidden="true">
+            <span>TJU</span>
+            <small>1895</small>
+          </div>
+          <div>
+            <p class="eyebrow">天津大学</p>
+            <h2>安全识别平台</h2>
+          </div>
+        </div>
+
+        <nav class="mode-list" aria-label="检测模式">
+          <button class="mode-button is-active" data-mode="image" type="button">
+            <span class="icon" aria-hidden="true">▧</span>
+            图片检测
+          </button>
+          <button class="mode-button" data-mode="video" type="button">
+            <span class="icon" aria-hidden="true">▶</span>
+            视频检测
+          </button>
+          <button class="mode-button" data-mode="camera" type="button">
+            <span class="icon" aria-hidden="true">●</span>
+            摄像头
+          </button>
+        </nav>
+
+        <section class="model-summary" aria-label="模型训练信息">
+          <h3>训练方案</h3>
+          <dl>
+            <div>
+              <dt>Backbone</dt>
+              <dd>EfficientNet-B0</dd>
+            </div>
+            <div>
+              <dt>Augment</dt>
+              <dd>RandAugment + Affine</dd>
+            </div>
+            <div>
+              <dt>Output</dt>
+              <dd>danger_sign_model.onnx</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="sample-strip" aria-label="样本库">
+          <h3>样本库</h3>
+          <div id="sampleList" class="sample-list"></div>
+        </section>
+
+        <button id="logoutButton" class="ghost-action" type="button">
+          <span class="icon" aria-hidden="true">↩</span>
+          退出系统
+        </button>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">PEIYANG SAFETY AI</p>
+            <h1>危险标志识别控制台</h1>
+          </div>
+          <div class="status-cluster">
+            <div class="status-pill" id="systemStatus">模型加载中</div>
+            <div class="runtime-pill" id="runtimeStatus">WASM</div>
+          </div>
+        </header>
+
+        <section class="metric-strip" aria-label="项目指标">
+          <div>
+            <span>类别数</span>
+            <strong>5</strong>
+          </div>
+          <div>
+            <span>输入源</span>
+            <strong>3</strong>
+          </div>
+          <div>
+            <span>训练架构</span>
+            <strong>4</strong>
+          </div>
+          <div>
+            <span>导出物</span>
+            <strong>ONNX</strong>
+          </div>
+        </section>
+
+        <section class="detect-grid">
+          <div class="input-panel">
+            <div class="panel-title">
+              <h2>检测输入</h2>
+              <span id="modeLabel">图片检测</span>
+            </div>
+
+            <div id="imageControls" class="control-stack">
+              <label class="file-drop">
+                <input id="imageInput" type="file" accept="image/*" />
+                <span class="icon" aria-hidden="true">+</span>
+                <strong>选择图片</strong>
+                <small>PNG / JPG / WEBP</small>
+              </label>
+            </div>
+
+            <div id="videoControls" class="control-stack hidden">
+              <label class="file-drop">
+                <input id="videoInput" type="file" accept="video/*" />
+                <span class="icon" aria-hidden="true">+</span>
+                <strong>选择视频</strong>
+                <small>MP4 / WebM</small>
+              </label>
+              <button id="pauseVideoButton" class="secondary-action" type="button">
+                <span class="icon" aria-hidden="true">Ⅱ</span>
+                暂停
+              </button>
+            </div>
+
+            <div id="cameraControls" class="control-stack hidden">
+              <button id="startCameraButton" class="primary-action" type="button">
+                <span class="icon" aria-hidden="true">●</span>
+                开启摄像头
+              </button>
+              <button id="stopCameraButton" class="secondary-action" type="button">
+                <span class="icon" aria-hidden="true">■</span>
+                停止
+              </button>
+            </div>
+
+            <p id="inputMessage" class="input-message">已加载标准样本</p>
+
+            <div class="input-facts" aria-label="输入状态">
+              <div>
+                <span>输入源</span>
+                <strong id="inputSourceValue">标准样本</strong>
+              </div>
+              <div>
+                <span>推理锁</span>
+                <strong id="queueValue">空闲</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-panel">
+            <canvas id="previewCanvas" width="960" height="640" aria-label="检测画面"></canvas>
+            <video id="videoSource" class="hidden" muted playsinline></video>
+            <video id="cameraSource" class="hidden" muted playsinline></video>
+          </div>
+
+          <div class="result-panel">
+            <div class="panel-title">
+              <h2>识别结果</h2>
+              <span id="confidenceValue">--</span>
+            </div>
+            <div class="inference-meta">
+              <div>
+                <span>推理引擎</span>
+                <strong id="backendValue">加载中</strong>
+              </div>
+              <div>
+                <span>模型架构</span>
+                <strong id="modelArchValue">EfficientNet-B0</strong>
+              </div>
+              <div>
+                <span>耗时</span>
+                <strong id="latencyValue">-- ms</strong>
+              </div>
+            </div>
+            <div class="result-main">
+              <img id="resultThumb" alt="" />
+              <div>
+                <p id="resultName">等待检测</p>
+                <span id="riskBadge" class="risk-badge">--</span>
+              </div>
+            </div>
+            <div id="scoreList" class="score-list"></div>
+            <dl class="detail-list">
+              <div>
+                <dt>检测类型</dt>
+                <dd id="detailMode">图片检测</dd>
+              </div>
+              <div>
+                <dt>建议处置</dt>
+                <dd id="detailAction">保持观察</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="vendor/onnxruntime-web/ort.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
