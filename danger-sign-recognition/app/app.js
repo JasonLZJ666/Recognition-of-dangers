@@ -158,6 +158,11 @@ function findSignalBounds(source) {
   let maxX = 0;
   let maxY = 0;
   let count = 0;
+  let yellowMinX = scanWidth;
+  let yellowMinY = scanHeight;
+  let yellowMaxX = 0;
+  let yellowMaxY = 0;
+  let yellowCount = 0;
 
   for (let y = 0; y < scanHeight; y += 1) {
     for (let x = 0; x < scanWidth; x += 1) {
@@ -166,8 +171,23 @@ function findSignalBounds(source) {
       const g = data[i + 1];
       const b = data[i + 2];
       const a = data[i + 3];
+      const yellowCore =
+        a > 20 &&
+        r > 130 &&
+        g > 105 &&
+        b < 135 &&
+        r - b > 38 &&
+        g - b > 25 &&
+        r + g - b > 220;
       const nonWhite = a > 20 && (r < 242 || g < 242 || b < 232);
       const signColor = nonWhite && (r < 120 || g < 120 || b < 120 || (r > 160 && g > 135 && b < 100));
+      if (yellowCore) {
+        yellowMinX = Math.min(yellowMinX, x);
+        yellowMinY = Math.min(yellowMinY, y);
+        yellowMaxX = Math.max(yellowMaxX, x);
+        yellowMaxY = Math.max(yellowMaxY, y);
+        yellowCount += 1;
+      }
       if (signColor) {
         minX = Math.min(minX, x);
         minY = Math.min(minY, y);
@@ -176,6 +196,14 @@ function findSignalBounds(source) {
         count += 1;
       }
     }
+  }
+
+  if (yellowCount >= 45) {
+    minX = yellowMinX;
+    minY = yellowMinY;
+    maxX = yellowMaxX;
+    maxY = yellowMaxY;
+    count = yellowCount;
   }
 
   if (count < 80) {
@@ -197,6 +225,19 @@ function findSignalBounds(source) {
   };
 }
 
+function squareSignalBounds(bounds, source, padding = 0.18) {
+  const { width: sourceWidth, height: sourceHeight } = sourceSize(source);
+  const centerX = bounds.x + bounds.width / 2;
+  const centerY = bounds.y + bounds.height / 2;
+  const rawSide = Math.max(bounds.width, bounds.height) * (1 + padding * 2);
+  const side = Math.max(1, Math.min(rawSide, sourceWidth, sourceHeight));
+  const maxX = Math.max(0, sourceWidth - side);
+  const maxY = Math.max(0, sourceHeight - side);
+  const x = Math.min(Math.max(0, centerX - side / 2), maxX);
+  const y = Math.min(Math.max(0, centerY - side / 2), maxY);
+  return { x, y, width: side, height: side };
+}
+
 function pixelFeature(r, g, b) {
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   const darkness = Math.max(0, 1 - luminance);
@@ -206,7 +247,7 @@ function pixelFeature(r, g, b) {
 }
 
 function buildSignature(source) {
-  const bounds = findSignalBounds(source);
+  const bounds = squareSignalBounds(findSignalBounds(source), source);
   const canvas = document.createElement("canvas");
   canvas.width = SAMPLE_SIZE;
   canvas.height = SAMPLE_SIZE;
@@ -249,7 +290,7 @@ function softmax(values) {
 }
 
 function preprocessForOnnx(source, metadata) {
-  const bounds = findSignalBounds(source);
+  const bounds = squareSignalBounds(findSignalBounds(source), source);
   const size = metadata.imageSize || 224;
   const mean = metadata.mean || [0.485, 0.456, 0.406];
   const std = metadata.std || [0.229, 0.224, 0.225];

@@ -24,6 +24,7 @@ class TrainingConfig:
     metric_for_best: str
     seed: int
     workers: int
+    init_checkpoint: Path | None
     auto_augment: bool
     amp: bool
     deterministic: bool
@@ -49,6 +50,7 @@ class TrainingConfig:
             metric_for_best=args.metric_for_best,
             seed=args.seed,
             workers=args.workers,
+            init_checkpoint=args.init_checkpoint,
             auto_augment=not args.no_auto_augment,
             amp=amp,
             deterministic=args.deterministic,
@@ -58,4 +60,5 @@ class TrainingConfig:
         data = asdict(self)
         data["dataset"] = str(self.dataset)
         data["out"] = str(self.out)
+        data["init_checkpoint"] = str(self.init_checkpoint) if self.init_checkpoint else None
         return data

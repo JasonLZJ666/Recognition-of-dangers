@@ -8,35 +8,60 @@
   </head>
   <body>
     <section id="loginScreen" class="login-shell">
-      <div class="login-panel">
-        <div class="login-copy">
-          <div class="login-brand">
-            <div class="tju-mark" aria-hidden="true">
-              <span>TJU</span>
-              <small>1895</small>
-            </div>
-            <div>
-              <p class="eyebrow">TIANJIN UNIVERSITY</p>
-              <h1>危险标志识别系统</h1>
-              <p class="motto">实事求是 · 智能安全实验平台</p>
-            </div>
+      <div class="campus-topline" aria-label="天津大学常用入口">
+        <div class="topline-inner">
+          <div class="quick-links">
+            <span>考生</span>
+            <span>学生</span>
+            <span>教职工</span>
+            <span>校友</span>
           </div>
+          <div class="language-links">
+            <span>ENGLISH</span>
+            <span>Language</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="login-showcase" aria-label="系统能力概览">
-            <p class="product-eyebrow">ONNX Runtime Web</p>
-            <h2>在浏览器中完成<br />危险标志识别。</h2>
-            <p>图片、视频、摄像头三类输入统一接入，模型推理和结果展示都在前端完成。</p>
-            <div class="showcase-signs" aria-hidden="true">
-              <img src="assets/signs/flammable.png" alt="" />
-              <img src="assets/signs/falling_rocks.png" alt="" />
-              <img src="assets/signs/water_hazard.png" alt="" />
-              <img src="assets/signs/falling_objects.png" alt="" />
-              <img src="assets/signs/explosion.png" alt="" />
-            </div>
+      <header class="campus-header">
+        <div class="campus-brand">
+          <div class="tju-mark" aria-hidden="true">
+            <span>TJU</span>
+            <small>1895</small>
+          </div>
+          <div>
+            <strong>天津大学</strong>
+            <span>TIANJIN UNIVERSITY</span>
+          </div>
+        </div>
+        <nav class="campus-nav" aria-label="官网风格导航">
+          <span>天大概况</span>
+          <span>天大新闻</span>
+          <span>招生就业</span>
+          <span>学院（部）</span>
+          <span>科学研究</span>
+          <span>校园文化</span>
+          <span>国际交流</span>
+        </nav>
+      </header>
+
+      <div class="login-hero">
+        <div class="hero-copy">
+          <p class="section-en">PEIYANG SAFETY AI</p>
+          <h1>危险标志识别系统</h1>
+          <p class="hero-lead">
+            面向安全巡检场景，完成附件危险标志的数据增强、深度学习训练与网页端智能识别。
+          </p>
+          <div class="hero-actions" aria-label="系统能力">
+            <span>图片识别</span>
+            <span>视频检测</span>
+            <span>摄像头实时推理</span>
           </div>
         </div>
 
         <div class="login-card">
+          <p class="section-en">SYSTEM LOGIN</p>
+          <h2>统一身份入口</h2>
           <form id="loginForm" class="login-form">
             <label>
               账号
@@ -47,113 +72,179 @@
               <input id="password" name="password" type="password" autocomplete="current-password" value="123456" />
             </label>
             <button class="primary-action" type="submit">
-              <span class="icon" aria-hidden="true">↪</span>
-              登录系统
+              <span class="icon" aria-hidden="true">→</span>
+              登录识别平台
             </button>
             <p id="loginError" class="form-error" hidden>账号或密码错误</p>
           </form>
-
-          <div class="login-meta" aria-label="系统信息">
-            <span>EfficientNet-B0</span>
-            <span>5 类标志</span>
-            <span>ONNX 前端推理</span>
-          </div>
         </div>
       </div>
+
+      <section class="peiyang-data" aria-label="项目数据">
+        <div class="section-heading">
+          <p class="section-en">TJU DATA</p>
+          <h2>北洋 · 数据</h2>
+        </div>
+        <div class="data-grid">
+          <div>
+            <strong>5</strong>
+            <span>危险标志类别</span>
+          </div>
+          <div>
+            <strong>1105</strong>
+            <span>增强训练样本</span>
+          </div>
+          <div>
+            <strong>400</strong>
+            <span>独立测试样本</span>
+          </div>
+          <div>
+            <strong>99.46%</strong>
+            <span>最佳 Macro-F1</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="login-signs" aria-label="识别类别">
+        <div class="section-heading">
+          <p class="section-en">TJU SAFETY</p>
+          <h2>北洋 · 智识</h2>
+        </div>
+        <div class="showcase-signs" aria-hidden="true">
+          <img src="assets/signs/flammable.png" alt="" />
+          <img src="assets/signs/falling_rocks.png" alt="" />
+          <img src="assets/signs/water_hazard.png" alt="" />
+          <img src="assets/signs/falling_objects.png" alt="" />
+          <img src="assets/signs/explosion.png" alt="" />
+        </div>
+      </section>
     </section>
 
     <main id="appScreen" class="app-shell hidden">
-      <aside class="sidebar">
-        <div class="sidebar-head">
-          <div class="tju-mark small" aria-hidden="true">
+      <div class="campus-topline app-topline" aria-label="天津大学常用入口">
+        <div class="topline-inner">
+          <div class="quick-links">
+            <span>考生</span>
+            <span>学生</span>
+            <span>教职工</span>
+            <span>校友</span>
+          </div>
+          <div class="language-links">
+            <span>ENGLISH</span>
+            <span>安全识别平台</span>
+          </div>
+        </div>
+      </div>
+
+      <header class="campus-header app-header">
+        <div class="campus-brand">
+          <div class="tju-mark" aria-hidden="true">
             <span>TJU</span>
             <small>1895</small>
           </div>
           <div>
-            <p class="eyebrow">天津大学</p>
-            <h2>安全识别平台</h2>
+            <strong>天津大学</strong>
+            <span>TIANJIN UNIVERSITY</span>
           </div>
         </div>
-
-        <nav class="mode-list" aria-label="检测模式">
-          <button class="mode-button is-active" data-mode="image" type="button">
-            <span class="icon" aria-hidden="true">▧</span>
-            图片检测
-          </button>
-          <button class="mode-button" data-mode="video" type="button">
-            <span class="icon" aria-hidden="true">▶</span>
-            视频检测
-          </button>
-          <button class="mode-button" data-mode="camera" type="button">
-            <span class="icon" aria-hidden="true">●</span>
-            摄像头
-          </button>
+        <nav class="campus-nav" aria-label="系统导航">
+          <span>识别控制台</span>
+          <span>模型训练</span>
+          <span>数据增强</span>
+          <span>实验报告</span>
+          <span>网页部署</span>
         </nav>
+        <button id="logoutButton" class="header-logout" type="button">退出系统</button>
+      </header>
 
-        <section class="model-summary" aria-label="模型训练信息">
-          <h3>训练方案</h3>
-          <dl>
-            <div>
-              <dt>Backbone</dt>
-              <dd>EfficientNet-B0</dd>
-            </div>
-            <div>
-              <dt>Augment</dt>
-              <dd>RandAugment + Affine</dd>
-            </div>
-            <div>
-              <dt>Output</dt>
-              <dd>danger_sign_model.onnx</dd>
-            </div>
-          </dl>
-        </section>
+      <section class="console-hero">
+        <div>
+          <p class="section-en">PEIYANG SAFETY AI</p>
+          <h1>危险标志识别控制台</h1>
+          <p>基于 EfficientNet-B0 与 ONNX Runtime Web，支持图片、视频和摄像头输入。</p>
+        </div>
+        <div class="status-cluster">
+          <div class="status-pill" id="systemStatus">模型加载中</div>
+          <div class="runtime-pill" id="runtimeStatus">WASM</div>
+        </div>
+      </section>
 
-        <section class="sample-strip" aria-label="样本库">
-          <h3>样本库</h3>
-          <div id="sampleList" class="sample-list"></div>
-        </section>
-
-        <button id="logoutButton" class="ghost-action" type="button">
-          <span class="icon" aria-hidden="true">↩</span>
-          退出系统
-        </button>
-      </aside>
+      <section class="metric-strip" aria-label="项目指标">
+        <div>
+          <span>TJU DATA</span>
+          <strong>5</strong>
+          <small>识别类别</small>
+        </div>
+        <div>
+          <span>INPUT</span>
+          <strong>3</strong>
+          <small>输入源</small>
+        </div>
+        <div>
+          <span>MODEL</span>
+          <strong>EfficientNet</strong>
+          <small>训练架构</small>
+        </div>
+        <div>
+          <span>DEPLOY</span>
+          <strong>ONNX</strong>
+          <small>前端推理</small>
+        </div>
+      </section>
 
       <section class="workspace">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow">PEIYANG SAFETY AI</p>
-            <h1>危险标志识别控制台</h1>
+        <aside class="sidebar">
+          <div class="sidebar-head">
+            <p class="section-en">TJU MENU</p>
+            <h2>检测模式</h2>
           </div>
-          <div class="status-cluster">
-            <div class="status-pill" id="systemStatus">模型加载中</div>
-            <div class="runtime-pill" id="runtimeStatus">WASM</div>
-          </div>
-        </header>
 
-        <section class="metric-strip" aria-label="项目指标">
-          <div>
-            <span>类别数</span>
-            <strong>5</strong>
-          </div>
-          <div>
-            <span>输入源</span>
-            <strong>3</strong>
-          </div>
-          <div>
-            <span>训练架构</span>
-            <strong>4</strong>
-          </div>
-          <div>
-            <span>导出物</span>
-            <strong>ONNX</strong>
-          </div>
-        </section>
+          <nav class="mode-list" aria-label="检测模式">
+            <button class="mode-button is-active" data-mode="image" type="button">
+              <span class="icon" aria-hidden="true">▧</span>
+              图片检测
+            </button>
+            <button class="mode-button" data-mode="video" type="button">
+              <span class="icon" aria-hidden="true">▶</span>
+              视频检测
+            </button>
+            <button class="mode-button" data-mode="camera" type="button">
+              <span class="icon" aria-hidden="true">●</span>
+              摄像头
+            </button>
+          </nav>
 
-        <section class="detect-grid">
+          <section class="model-summary" aria-label="模型训练信息">
+            <h3>训练方案</h3>
+            <dl>
+              <div>
+                <dt>Backbone</dt>
+                <dd>EfficientNet-B0</dd>
+              </div>
+              <div>
+                <dt>Augment</dt>
+                <dd>RandAugment + Affine</dd>
+              </div>
+              <div>
+                <dt>Output</dt>
+                <dd>danger_sign_model.onnx</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="sample-strip" aria-label="样本库">
+            <h3>样本库</h3>
+            <div id="sampleList" class="sample-list"></div>
+          </section>
+        </aside>
+
+        <section class="detect-area">
           <div class="input-panel">
             <div class="panel-title">
-              <h2>检测输入</h2>
+              <div>
+                <p class="section-en">INPUT SOURCE</p>
+                <h2>检测输入</h2>
+              </div>
               <span id="modeLabel">图片检测</span>
             </div>
 
@@ -212,7 +303,10 @@
 
           <div class="result-panel">
             <div class="panel-title">
-              <h2>识别结果</h2>
+              <div>
+                <p class="section-en">RESULT</p>
+                <h2>识别结果</h2>
+              </div>
               <span id="confidenceValue">--</span>
             </div>
             <div class="inference-meta">

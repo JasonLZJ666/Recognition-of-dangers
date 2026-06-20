@@ -74,6 +74,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--metric-for-best", choices=("val_macro_f1", "val_top1", "val_top3"), default="val_macro_f1")
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--workers", type=int, default=0)
+    parser.add_argument("--init-checkpoint", type=Path, default=None, help="Continue training from an existing checkpoint")
     parser.add_argument("--deterministic", action="store_true")
     parser.add_argument("--no-auto-augment", action="store_true")
     parser.add_argument("--no-amp", action="store_true")
@@ -162,6 +163,17 @@ def main() -> None:
         dropout=config.dropout,
         freeze_backbone=config.freeze_backbone,
     ).to(device)
+    if config.init_checkpoint:
+        checkpoint = torch.load(config.init_checkpoint, map_location="cpu", weights_only=False)
+        checkpoint_metadata = checkpoint.get("metadata", {})
+        checkpoint_classes = list(checkpoint_metadata.get("classes", []))
+        if checkpoint_classes and checkpoint_classes != train_dataset.classes:
+            raise RuntimeError(
+                "Checkpoint classes do not match dataset classes: "
+                f"checkpoint={checkpoint_classes} dataset={train_dataset.classes}"
+            )
+        model.load_state_dict(checkpoint["model"], strict=True)
+        print(f"loaded init_checkpoint={config.init_checkpoint}")
 
     criterion = nn.CrossEntropyLoss(label_smoothing=config.label_smoothing)
     optimizer = torch.optim.AdamW(

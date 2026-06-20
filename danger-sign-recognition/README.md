@@ -117,6 +117,22 @@ python model\build_viewpoint_dataset.py --source dataset --out dataset_test_view
 python model\evaluate_model.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset dataset_test_viewpoint --out model\artifacts_viewpoint\test_classification_report.json --repeats 1
 ```
 
+前端真实上传照片的准确率主要受裁剪定位影响。当前版本网页端会优先定位黄色警示主体，再扩展为带留白的方形区域送入 ONNX 模型，避免把地面、墙面暗线等背景一起喂给模型。可用下面命令复现实验：
+
+```powershell
+python model\build_frontend_test_photos.py --per-class 6
+python model\evaluate_frontend_photos.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset test_inputs\frontend_photos --crop square --padding 0.18
+```
+
+当前 `artifacts_viewpoint` 模型在 `test_inputs/frontend_photos/` 上评估为 `30/30`，准确率 `1.0000`；在 `dataset_test_viewpoint/` 上 Top-1 为 `0.9975`、Top-3 为 `1.0000`、Macro-F1 为 `0.9975`。
+
+如果要继续做“真实拍照场景”微调，可以生成场景裁剪训练集，再从已有 checkpoint 继续训练：
+
+```powershell
+python model\build_scene_crop_dataset.py --source dataset --base dataset_viewpoint --out dataset_scene_finetune --per-class 100 --base-limit-per-class 50 --size 320 --padding 0.18
+python model\train_model.py --dataset dataset_scene_finetune --out model\artifacts_scene_finetune --arch efficientnet_b0 --pretrained --freeze-backbone --init-checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --epochs 8 --batch-size 64 --image-size 192 --repeats 1 --lr 0.00016 --no-auto-augment
+```
+
 使用增强后的 5 类数据训练当前网页模型：
 
 ```powershell
@@ -170,8 +186,10 @@ model/model_utils.py        参数量、模型体积、环境快照等工具
 model/reporting.py          CSV、JSON、实验报告和模型卡片导出
 model/data_audit.py         数据集尺寸、数量、重复哈希审计
 model/build_viewpoint_dataset.py  从 5 张附件图生成角度/光照增强数据
+model/build_scene_crop_dataset.py 从 5 类附件图生成前端场景裁剪微调数据
 model/training_engine.py    单轮训练/验证循环和指标汇总
 model/evaluate_model.py     独立 checkpoint 评估和分类报告导出
+model/evaluate_frontend_photos.py 前端照片裁剪一致性评估
 model/train_model.py        命令行入口和训练编排
 model/export_onnx.py        PyTorch 权重导出 ONNX
 ```

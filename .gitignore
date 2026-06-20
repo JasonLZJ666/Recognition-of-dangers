@@ -5,3 +5,13 @@ __pycache__/
 # Downloaded third-party raw datasets are kept locally, not in Git.
 danger-sign-recognition/external_datasets/raw/
 danger-sign-recognition/external_datasets/**/*.zip
+
+# Locally generated scene-training data and experiment outputs.
+danger-sign-recognition/dataset_scene_crops/
+danger-sign-recognition/dataset_scene_finetune/
+danger-sign-recognition/model/artifacts_scene/
+danger-sign-recognition/model/artifacts_scene_finetune/
+danger-sign-recognition/model/artifacts_viewpoint/eval_*_now.json
+danger-sign-recognition/model/artifacts_viewpoint/eval_*_yellow_crop.json
+danger-sign-recognition/model/artifacts_viewpoint/frontend_*_crop_sheet.jpg
+danger-sign-recognition/docs/~$*.pptx
