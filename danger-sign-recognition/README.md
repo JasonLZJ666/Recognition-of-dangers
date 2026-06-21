@@ -117,11 +117,11 @@ python model\build_viewpoint_dataset.py --source dataset --out dataset_test_view
 python model\evaluate_model.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset dataset_test_viewpoint --out model\artifacts_viewpoint\test_classification_report.json --repeats 1
 ```
 
-前端真实上传照片的准确率主要受裁剪定位影响。当前版本网页端会优先定位黄色警示主体，再扩展为带留白的方形区域送入 ONNX 模型，避免把地面、墙面暗线等背景一起喂给模型。可用下面命令复现实验：
+前端真实上传照片和摄像头画面的准确率主要受裁剪定位、运动模糊和单帧抖动影响。当前版本网页端会优先定位黄色警示主体，再扩展为带留白的方形区域送入 ONNX 模型，避免把地面、墙面暗线等背景一起喂给模型；视频和摄像头模式还会对最近多帧置信度做平滑，只有结果稳定后才明显切换类别，减少实时画面中的跳变误判。
 
 ```powershell
 python model\build_frontend_test_photos.py --per-class 6
-python model\evaluate_frontend_photos.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset test_inputs\frontend_photos --crop square --padding 0.18
+python model\evaluate_frontend_photos.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --dataset test_inputs\frontend_photos --crop square --padding 0.28
 ```
 
 当前 `artifacts_viewpoint` 模型在 `test_inputs/frontend_photos/` 上评估为 `30/30`，准确率 `1.0000`；在 `dataset_test_viewpoint/` 上 Top-1 为 `0.9975`、Top-3 为 `1.0000`、Macro-F1 为 `0.9975`。
@@ -129,7 +129,7 @@ python model\evaluate_frontend_photos.py --checkpoint model\artifacts_viewpoint\
 如果要继续做“真实拍照场景”微调，可以生成场景裁剪训练集，再从已有 checkpoint 继续训练：
 
 ```powershell
-python model\build_scene_crop_dataset.py --source dataset --base dataset_viewpoint --out dataset_scene_finetune --per-class 100 --base-limit-per-class 50 --size 320 --padding 0.18
+python model\build_scene_crop_dataset.py --source dataset --base dataset_viewpoint --out dataset_scene_finetune --per-class 100 --base-limit-per-class 50 --size 320 --padding 0.28
 python model\train_model.py --dataset dataset_scene_finetune --out model\artifacts_scene_finetune --arch efficientnet_b0 --pretrained --freeze-backbone --init-checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt --epochs 8 --batch-size 64 --image-size 192 --repeats 1 --lr 0.00016 --no-auto-augment
 ```
 

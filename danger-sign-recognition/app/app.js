@@ -41,6 +41,10 @@ const MODEL_METADATA_URL = "model/model_metadata.json";
 const MODEL_BASE_PATH = "model/";
 const WASM_BASE_PATH = new URL("vendor/onnxruntime-web/", window.location.href).href;
 const SAMPLE_SIZE = 72;
+const REALTIME_INFERENCE_INTERVAL_MS = 520;
+const REALTIME_EMA_ALPHA = 0.42;
+const REALTIME_HISTORY_SIZE = 6;
+const REALTIME_STABLE_VOTES = 3;
 const PREVIEW_PARAMS = new URLSearchParams(window.location.search);
 const PREVIEW_MODE = PREVIEW_PARAMS.get("preview") === "1";
 const SKIP_ONNX = PREVIEW_PARAMS.get("noOnnx") === "1";
@@ -53,7 +57,8 @@ const state = {
   inferenceBusy: false,
   activeTimer: null,
   cameraStream: null,
-  videoPlaying: false
+  videoPlaying: false,
+  realtimeSmoothing: null
 };
 
 const els = {
@@ -284,7 +289,7 @@ function findSignalBounds(source) {
   };
 }
 
-function squareSignalBounds(bounds, source, padding = 0.18) {
+function squareSignalBounds(bounds, source, padding = 0.28) {
   const { width: sourceWidth, height: sourceHeight } = sourceSize(source);
   const centerX = bounds.x + bounds.width / 2;
   const centerY = bounds.y + bounds.height / 2;
@@ -448,6 +453,78 @@ async function classify(source) {
   return classifyBySignature(source);
 }
 
+function resetRealtimeSmoothing() {
+  state.realtimeSmoothing = {
+    backend: null,
+    scores: new Map(),
+    history: [],
+    lastStableId: null
+  };
+}
+
+function moveCandidateToFront(candidates, candidateId) {
+  const index = candidates.findIndex((candidate) => candidate.id === candidateId);
+  if (index <= 0) return candidates;
+  const reordered = [...candidates];
+  const [candidate] = reordered.splice(index, 1);
+  reordered.unshift(candidate);
+  return reordered;
+}
+
+function stabilizeRealtimeResult(result) {
+  if (!state.realtimeSmoothing || state.realtimeSmoothing.backend !== result.backend) {
+    resetRealtimeSmoothing();
+    state.realtimeSmoothing.backend = result.backend;
+  }
+
+  const smoothing = state.realtimeSmoothing;
+  const nextScores = new Map();
+  result.candidates.forEach((candidate) => {
+    const previous = smoothing.scores.has(candidate.id) ? smoothing.scores.get(candidate.id) : candidate.confidence;
+    nextScores.set(candidate.id, previous * (1 - REALTIME_EMA_ALPHA) + candidate.confidence * REALTIME_EMA_ALPHA);
+  });
+  smoothing.scores = nextScores;
+
+  smoothing.history.push(result.best.id);
+  if (smoothing.history.length > REALTIME_HISTORY_SIZE) {
+    smoothing.history.shift();
+  }
+
+  const smoothedCandidates = result.candidates
+    .map((candidate) => ({
+      ...candidate,
+      confidence: Math.max(0.01, Math.min(0.99, nextScores.get(candidate.id) ?? candidate.confidence))
+    }))
+    .sort((a, b) => b.confidence - a.confidence);
+
+  const leadingId = smoothedCandidates[0].id;
+  const leadingVotes = smoothing.history.filter((id) => id === leadingId).length;
+  const rawGap = result.candidates.length > 1 ? result.candidates[0].confidence - result.candidates[1].confidence : 1;
+
+  if (leadingVotes >= REALTIME_STABLE_VOTES || smoothedCandidates[0].confidence >= 0.78) {
+    smoothing.lastStableId = leadingId;
+  }
+
+  let candidates = smoothedCandidates;
+  if (smoothing.lastStableId && smoothing.lastStableId !== leadingId) {
+    const stableCandidate = smoothedCandidates.find((candidate) => candidate.id === smoothing.lastStableId);
+    if (stableCandidate) {
+      const leadOverStable = smoothedCandidates[0].confidence - stableCandidate.confidence;
+      if (leadingVotes < REALTIME_STABLE_VOTES || leadOverStable < 0.16 || rawGap < 0.12) {
+        stableCandidate.confidence = Math.max(stableCandidate.confidence, smoothedCandidates[0].confidence - 0.02);
+        candidates = moveCandidateToFront(smoothedCandidates, smoothing.lastStableId);
+      }
+    }
+  }
+
+  return {
+    ...result,
+    best: candidates[0],
+    candidates,
+    stabilized: true
+  };
+}
+
 function drawPreview(source, result) {
   const canvas = els.previewCanvas;
   const { width, height } = sourceSize(source);
@@ -529,11 +606,12 @@ function updateResult(result) {
   });
 }
 
-async function analyzeSource(source, message) {
+async function analyzeSource(source, message, options = {}) {
   if (!state.references.length && !state.onnxSession) return;
   const start = performance.now();
   try {
-    const result = await classify(source);
+    const rawResult = await classify(source);
+    const result = options.stabilize ? stabilizeRealtimeResult(rawResult) : rawResult;
     const elapsed = Math.max(1, Math.round(performance.now() - start));
     if (els.latencyValue) els.latencyValue.textContent = `${elapsed} ms`;
     drawPreview(source, result);
@@ -545,7 +623,8 @@ async function analyzeSource(source, message) {
       setMessage("模型推理失败，请检查 ONNX 文件", true);
       return;
     }
-    const fallback = classifyBySignature(source);
+    const rawFallback = classifyBySignature(source);
+    const fallback = options.stabilize ? stabilizeRealtimeResult(rawFallback) : rawFallback;
     const elapsed = Math.max(1, Math.round(performance.now() - start));
     if (els.latencyValue) els.latencyValue.textContent = `${elapsed} ms`;
     drawPreview(source, fallback);
@@ -565,6 +644,7 @@ function clearTimer() {
 
 function stopCamera() {
   clearTimer();
+  resetRealtimeSmoothing();
   if (state.cameraStream) {
     state.cameraStream.getTracks().forEach((track) => track.stop());
     state.cameraStream = null;
@@ -574,6 +654,7 @@ function stopCamera() {
 
 function stopVideoLoop() {
   clearTimer();
+  resetRealtimeSmoothing();
   els.videoSource.pause();
   state.videoPlaying = false;
   els.pauseVideoButton.innerHTML = '<span class="icon" aria-hidden="true">▷</span>继续';
@@ -581,6 +662,7 @@ function stopVideoLoop() {
 
 function startVideoLoop(video, label) {
   clearTimer();
+  resetRealtimeSmoothing();
   state.videoPlaying = true;
   video.play();
   state.activeTimer = setInterval(() => {
@@ -588,17 +670,18 @@ function startVideoLoop(video, label) {
       if (state.inferenceBusy) return;
       state.inferenceBusy = true;
       setQueue("推理中");
-      analyzeSource(video, label).finally(() => {
+      analyzeSource(video, label, { stabilize: true }).finally(() => {
         state.inferenceBusy = false;
         setQueue("空闲");
       });
     }
-  }, 720);
+  }, REALTIME_INFERENCE_INTERVAL_MS);
 }
 
 function setMode(mode) {
   state.mode = mode;
   clearTimer();
+  resetRealtimeSmoothing();
   stopCamera();
   els.videoSource.pause();
 
@@ -620,6 +703,7 @@ function setMode(mode) {
 
 async function handleImageFile(file) {
   if (!file) return;
+  resetRealtimeSmoothing();
   setInputSource(file.name);
   const url = URL.createObjectURL(file);
   try {
@@ -634,6 +718,7 @@ async function handleImageFile(file) {
 
 function handleVideoFile(file) {
   if (!file) return;
+  resetRealtimeSmoothing();
   setInputSource(file.name);
   const url = URL.createObjectURL(file);
   els.videoSource.src = url;
@@ -655,9 +740,26 @@ async function startCamera() {
   try {
     stopCamera();
     state.cameraStream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: "environment" },
+      video: {
+        facingMode: { ideal: "environment" },
+        width: { ideal: 1280 },
+        height: { ideal: 720 },
+        frameRate: { ideal: 24, max: 30 }
+      },
       audio: false
     });
+    const [videoTrack] = state.cameraStream.getVideoTracks();
+    if (videoTrack?.applyConstraints) {
+      await videoTrack
+        .applyConstraints({
+          advanced: [
+            { focusMode: "continuous" },
+            { exposureMode: "continuous" },
+            { whiteBalanceMode: "continuous" }
+          ]
+        })
+        .catch(() => {});
+    }
     els.cameraSource.srcObject = state.cameraStream;
     await els.cameraSource.play();
     setInputSource("摄像头实时流");
