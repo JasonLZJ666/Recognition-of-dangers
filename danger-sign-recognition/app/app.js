@@ -39,7 +39,7 @@ const SIGN_LIBRARY = [
 const SIGN_BY_ID = new Map(SIGN_LIBRARY.map((sign) => [sign.id, sign]));
 const MODEL_METADATA_URL = "model/model_metadata.json";
 const MODEL_BASE_PATH = "model/";
-const WASM_BASE_PATH = "vendor/onnxruntime-web/";
+const WASM_BASE_PATH = new URL("vendor/onnxruntime-web/", window.location.href).href;
 const SAMPLE_SIZE = 72;
 const PREVIEW_PARAMS = new URLSearchParams(window.location.search);
 const PREVIEW_MODE = PREVIEW_PARAMS.get("preview") === "1";
@@ -138,6 +138,93 @@ function sourceSize(source) {
   };
 }
 
+function isLikelyYellowPixel(r, g, b, a) {
+  if (a <= 20) return false;
+  const maxChannel = Math.max(r, g, b);
+  const minChannel = Math.min(r, g, b);
+  const saturation = maxChannel === 0 ? 0 : (maxChannel - minChannel) / maxChannel;
+  const yellowBalance = (r + g) / 2 - b;
+  const relativeYellow = r > b + 24 && g > b + 18 && yellowBalance > 28;
+  const brightYellow = r > 130 && g > 105 && b < 150 && r + g - b > 210;
+  const shadowYellow = r > 70 && g > 58 && b < 130 && relativeYellow && saturation > 0.18;
+  const highlightYellow = r > 190 && g > 170 && b < 175 && relativeYellow && saturation > 0.2;
+  return brightYellow || shadowYellow || highlightYellow;
+}
+
+function countMaskInBox(mask, width, height, minX, minY, maxX, maxY, padding) {
+  const left = Math.max(0, minX - padding);
+  const top = Math.max(0, minY - padding);
+  const right = Math.min(width - 1, maxX + padding);
+  const bottom = Math.min(height - 1, maxY + padding);
+  let count = 0;
+  for (let y = top; y <= bottom; y += 1) {
+    for (let x = left; x <= right; x += 1) {
+      count += mask[y * width + x];
+    }
+  }
+  return count;
+}
+
+function largestComponentBounds(mask, width, height, minPixels, supportMask = null) {
+  const visited = new Uint8Array(mask.length);
+  const stack = new Int32Array(mask.length);
+  let best = null;
+
+  for (let start = 0; start < mask.length; start += 1) {
+    if (!mask[start] || visited[start]) continue;
+
+    let top = 0;
+    let count = 0;
+    let minX = width;
+    let minY = height;
+    let maxX = 0;
+    let maxY = 0;
+    stack[top] = start;
+    top += 1;
+    visited[start] = 1;
+
+    while (top > 0) {
+      top -= 1;
+      const index = stack[top];
+      const x = index % width;
+      const y = (index - x) / width;
+      count += 1;
+      minX = Math.min(minX, x);
+      minY = Math.min(minY, y);
+      maxX = Math.max(maxX, x);
+      maxY = Math.max(maxY, y);
+
+      const neighbors = [
+        x > 0 ? index - 1 : -1,
+        x < width - 1 ? index + 1 : -1,
+        y > 0 ? index - width : -1,
+        y < height - 1 ? index + width : -1
+      ];
+
+      for (const next of neighbors) {
+        if (next >= 0 && mask[next] && !visited[next]) {
+          visited[next] = 1;
+          stack[top] = next;
+          top += 1;
+        }
+      }
+    }
+
+    if (count >= minPixels) {
+      const area = (maxX - minX + 1) * (maxY - minY + 1);
+      const support = supportMask ? countMaskInBox(supportMask, width, height, minX, minY, maxX, maxY, 10) : 0;
+      const score = supportMask
+        ? (support > 0 ? support * 50 + count * 0.2 : count * 0.03)
+        : count + Math.sqrt(area) * 0.2;
+      if (!best || score > best.score) {
+        best = { minX, minY, maxX, maxY, count, support, score };
+      }
+    }
+  }
+
+  return best;
+}
+
 function findSignalBounds(source) {
   const { width, height } = sourceSize(source);
   const maxScan = 300;
@@ -152,70 +239,42 @@ function findSignalBounds(source) {
   scanCtx.fillRect(0, 0, scanWidth, scanHeight);
   scanCtx.drawImage(source, 0, 0, scanWidth, scanHeight);
   const data = scanCtx.getImageData(0, 0, scanWidth, scanHeight).data;
-
-  let minX = scanWidth;
-  let minY = scanHeight;
-  let maxX = 0;
-  let maxY = 0;
-  let count = 0;
-  let yellowMinX = scanWidth;
-  let yellowMinY = scanHeight;
-  let yellowMaxX = 0;
-  let yellowMaxY = 0;
-  let yellowCount = 0;
+  const yellowMask = new Uint8Array(scanWidth * scanHeight);
+  const signMask = new Uint8Array(scanWidth * scanHeight);
+  const darkMask = new Uint8Array(scanWidth * scanHeight);
 
   for (let y = 0; y < scanHeight; y += 1) {
     for (let x = 0; x < scanWidth; x += 1) {
-      const i = (y * scanWidth + x) * 4;
+      const pixel = y * scanWidth + x;
+      const i = pixel * 4;
       const r = data[i];
       const g = data[i + 1];
       const b = data[i + 2];
       const a = data[i + 3];
-      const yellowCore =
-        a > 20 &&
-        r > 130 &&
-        g > 105 &&
-        b < 135 &&
-        r - b > 38 &&
-        g - b > 25 &&
-        r + g - b > 220;
+      const yellowPixel = isLikelyYellowPixel(r, g, b, a);
       const nonWhite = a > 20 && (r < 242 || g < 242 || b < 232);
-      const signColor = nonWhite && (r < 120 || g < 120 || b < 120 || (r > 160 && g > 135 && b < 100));
-      if (yellowCore) {
-        yellowMinX = Math.min(yellowMinX, x);
-        yellowMinY = Math.min(yellowMinY, y);
-        yellowMaxX = Math.max(yellowMaxX, x);
-        yellowMaxY = Math.max(yellowMaxY, y);
-        yellowCount += 1;
-      }
-      if (signColor) {
-        minX = Math.min(minX, x);
-        minY = Math.min(minY, y);
-        maxX = Math.max(maxX, x);
-        maxY = Math.max(maxY, y);
-        count += 1;
-      }
+      const darkStroke = r < 125 && g < 120 && b < 115;
+      const warmStroke = r > 155 && g > 125 && b < 115;
+      const signPixel = nonWhite && (yellowPixel || darkStroke || warmStroke);
+      if (yellowPixel) yellowMask[pixel] = 1;
+      if (darkStroke) darkMask[pixel] = 1;
+      if (signPixel) signMask[pixel] = 1;
     }
   }
 
-  if (yellowCount >= 45) {
-    minX = yellowMinX;
-    minY = yellowMinY;
-    maxX = yellowMaxX;
-    maxY = yellowMaxY;
-    count = yellowCount;
-  }
-
-  if (count < 80) {
+  const yellowBounds = largestComponentBounds(yellowMask, scanWidth, scanHeight, 35, darkMask);
+  const signBounds = largestComponentBounds(signMask, scanWidth, scanHeight, 80);
+  const selected = yellowBounds || signBounds;
+  if (!selected) {
     return { x: 0, y: 0, width, height };
   }
 
-  const padX = Math.max(4, Math.round((maxX - minX) * 0.04));
-  const padY = Math.max(4, Math.round((maxY - minY) * 0.04));
-  minX = Math.max(0, minX - padX);
-  minY = Math.max(0, minY - padY);
-  maxX = Math.min(scanWidth - 1, maxX + padX);
-  maxY = Math.min(scanHeight - 1, maxY + padY);
+  const padX = Math.max(4, Math.round((selected.maxX - selected.minX) * 0.08));
+  const padY = Math.max(4, Math.round((selected.maxY - selected.minY) * 0.08));
+  const minX = Math.max(0, selected.minX - padX);
+  const minY = Math.max(0, selected.minY - padY);
+  const maxX = Math.min(scanWidth - 1, selected.maxX + padX);
+  const maxY = Math.min(scanHeight - 1, selected.maxY + padY);
 
   return {
     x: minX / scale,
@@ -646,6 +705,8 @@ async function initializeOnnxModel() {
 
   ort.env.wasm.wasmPaths = WASM_BASE_PATH;
   ort.env.wasm.numThreads = 1;
+  ort.env.wasm.proxy = false;
+  ort.env.wasm.simd = false;
 
   const metadataResponse = await fetch(MODEL_METADATA_URL);
   if (!metadataResponse.ok) {
@@ -654,15 +715,40 @@ async function initializeOnnxModel() {
   const metadata = await metadataResponse.json();
   const externalDataName = metadata.externalData || `${metadata.model}.data`;
   const externalDataPath = metadata.externalDataPath || externalDataName;
-  const session = await ort.InferenceSession.create(`${MODEL_BASE_PATH}${metadata.model}`, {
+  const modelUrl = new URL(`${MODEL_BASE_PATH}${metadata.model}`, window.location.href).href;
+  const externalDataUrl = new URL(`${MODEL_BASE_PATH}${externalDataName}`, window.location.href).href;
+  const sessionOptions = {
     executionProviders: ["wasm"],
     externalData: [
       {
         path: externalDataPath,
-        data: `${MODEL_BASE_PATH}${externalDataName}`
+        data: externalDataUrl
       }
     ]
-  });
+  };
+
+  let session;
+  try {
+    session = await ort.InferenceSession.create(modelUrl, sessionOptions);
+  } catch (urlError) {
+    console.warn("ONNX URL session creation failed, retrying with binary buffers.", urlError);
+    const [modelResponse, externalResponse] = await Promise.all([fetch(modelUrl), fetch(externalDataUrl)]);
+    if (!modelResponse.ok) throw new Error(`model fetch failed: ${modelResponse.status}`);
+    if (!externalResponse.ok) throw new Error(`external data fetch failed: ${externalResponse.status}`);
+    const [modelBuffer, externalBuffer] = await Promise.all([
+      modelResponse.arrayBuffer(),
+      externalResponse.arrayBuffer()
+    ]);
+    session = await ort.InferenceSession.create(new Uint8Array(modelBuffer), {
+      executionProviders: ["wasm"],
+      externalData: [
+        {
+          path: externalDataPath,
+          data: new Uint8Array(externalBuffer)
+        }
+      ]
+    });
+  }
 
   state.onnxMetadata = metadata;
   state.onnxSession = session;
@@ -696,7 +782,13 @@ async function loadReferences() {
   } catch (error) {
     console.warn("ONNX model initialization failed.", error);
     setStatus("标准样本模型就绪");
-    await analyzeSource(loaded[0].image, "ONNX模型未加载，当前使用离线相似度识别；请通过本地服务器打开页面");
+    setRuntime("ONNX 未加载");
+    setBackend("样本相似度");
+    const detail = error?.message ? `：${error.message}` : "";
+    await analyzeSource(
+      loaded[0].image,
+      `ONNX模型未加载${detail}；当前只使用离线相似度识别，准确率会明显低于训练模型`
+    );
   }
 }
 

@@ -45,6 +45,70 @@ def image_files(root: Path) -> list[tuple[Path, str]]:
     return items
 
 
+def count_mask_in_box(
+    mask: np.ndarray,
+    min_x: int,
+    min_y: int,
+    max_x: int,
+    max_y: int,
+    padding: int,
+) -> int:
+    height, width = mask.shape
+    left = max(0, min_x - padding)
+    top = max(0, min_y - padding)
+    right = min(width - 1, max_x + padding)
+    bottom = min(height - 1, max_y + padding)
+    return int(mask[top : bottom + 1, left : right + 1].sum())
+
+
+def largest_component_bounds(
+    mask: np.ndarray,
+    min_pixels: int,
+    support_mask: np.ndarray | None = None,
+) -> tuple[int, int, int, int] | None:
+    height, width = mask.shape
+    visited = np.zeros_like(mask, dtype=bool)
+    best: tuple[int, int, int, int, int, float] | None = None
+
+    for start_y, start_x in zip(*np.where(mask & ~visited)):
+        if visited[start_y, start_x]:
+            continue
+        stack = [(int(start_x), int(start_y))]
+        visited[start_y, start_x] = True
+        count = 0
+        min_x = width
+        min_y = height
+        max_x = 0
+        max_y = 0
+
+        while stack:
+            x, y = stack.pop()
+            count += 1
+            min_x = min(min_x, x)
+            min_y = min(min_y, y)
+            max_x = max(max_x, x)
+            max_y = max(max_y, y)
+            for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                if 0 <= nx < width and 0 <= ny < height and mask[ny, nx] and not visited[ny, nx]:
+                    visited[ny, nx] = True
+                    stack.append((nx, ny))
+
+        if count >= min_pixels:
+            area = (max_x - min_x + 1) * (max_y - min_y + 1)
+            support = count_mask_in_box(support_mask, min_x, min_y, max_x, max_y, 10) if support_mask is not None else 0
+            if support_mask is not None:
+                score = support * 50 + count * 0.2 if support > 0 else count * 0.03
+            else:
+                score = count + float(np.sqrt(area)) * 0.2
+            if best is None or score > best[5]:
+                best = (min_x, min_y, max_x, max_y, count, score)
+
+    if best is None:
+        return None
+    min_x, min_y, max_x, max_y, _, _ = best
+    return min_x, min_y, max_x, max_y
+
+
 def browser_signal_bounds(image: Image.Image) -> tuple[int, int, int, int]:
     width, height = image.size
     max_scan = 300
@@ -58,23 +122,34 @@ def browser_signal_bounds(image: Image.Image) -> tuple[int, int, int, int]:
     r = rgb[:, :, 0].astype(np.int16)
     g = rgb[:, :, 1].astype(np.int16)
     b = rgb[:, :, 2].astype(np.int16)
-    yellow_core = (alpha > 20) & (r > 130) & (g > 105) & (b < 135) & ((r - b) > 38) & ((g - b) > 25) & ((r + g - b) > 220)
+    max_channel = np.maximum.reduce([r, g, b])
+    min_channel = np.minimum.reduce([r, g, b])
+    saturation = np.divide(
+        max_channel - min_channel,
+        max_channel,
+        out=np.zeros_like(max_channel, dtype=np.float32),
+        where=max_channel != 0,
+    )
+    yellow_balance = (r + g) / 2 - b
+    relative_yellow = (r > b + 24) & (g > b + 18) & (yellow_balance > 28)
+    bright_yellow = (r > 130) & (g > 105) & (b < 150) & ((r + g - b) > 210)
+    shadow_yellow = (r > 70) & (g > 58) & (b < 130) & relative_yellow & (saturation > 0.18)
+    highlight_yellow = (r > 190) & (g > 170) & (b < 175) & relative_yellow & (saturation > 0.2)
+    yellow_core = (alpha > 20) & (bright_yellow | shadow_yellow | highlight_yellow)
     non_white = (alpha > 20) & ((r < 242) | (g < 242) | (b < 232))
-    sign_color = non_white & ((r < 120) | (g < 120) | (b < 120) | ((r > 160) & (g > 135) & (b < 100)))
-    yellow_ys, yellow_xs = np.where(yellow_core)
-    if len(yellow_xs) >= 45:
-        ys, xs = yellow_ys, yellow_xs
-    else:
-        ys, xs = np.where(sign_color)
-    if len(xs) < 80:
+    dark_stroke = (r < 125) & (g < 120) & (b < 115)
+    warm_stroke = (r > 155) & (g > 125) & (b < 115)
+    sign_color = non_white & (yellow_core | dark_stroke | warm_stroke)
+
+    selected = largest_component_bounds(yellow_core, min_pixels=35, support_mask=dark_stroke)
+    if selected is None:
+        selected = largest_component_bounds(sign_color, min_pixels=80)
+    if selected is None:
         return 0, 0, width, height
 
-    min_x = int(xs.min())
-    min_y = int(ys.min())
-    max_x = int(xs.max())
-    max_y = int(ys.max())
-    pad_x = max(4, round((max_x - min_x) * 0.04))
-    pad_y = max(4, round((max_y - min_y) * 0.04))
+    min_x, min_y, max_x, max_y = selected
+    pad_x = max(4, round((max_x - min_x) * 0.08))
+    pad_y = max(4, round((max_y - min_y) * 0.08))
     min_x = max(0, min_x - pad_x)
     min_y = max(0, min_y - pad_y)
     max_x = min(scan_width - 1, max_x + pad_x)
