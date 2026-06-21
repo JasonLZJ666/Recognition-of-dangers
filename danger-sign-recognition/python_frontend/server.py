@@ -69,8 +69,6 @@ SIGN_INFO = {
 
 DEFAULT_CHECKPOINTS = (
     PROJECT_ROOT / "model" / "artifacts_viewpoint" / "best_danger_sign_model.pt",
-    PROJECT_ROOT / "model" / "artifacts_extended" / "best_danger_sign_model.pt",
-    PROJECT_ROOT / "model" / "artifacts" / "best_danger_sign_model.pt",
 )
 
 
@@ -566,8 +564,8 @@ class PythonFrontendHandler(BaseHTTPRequestHandler):
             self._send_json(self.predictor.summary())
             return
         if path.startswith("/assets/"):
-            asset_path = (PROJECT_ROOT / "app" / path.lstrip("/")).resolve()
-            assets_root = (PROJECT_ROOT / "app" / "assets").resolve()
+            asset_path = (PROJECT_ROOT / "python_frontend" / path.lstrip("/")).resolve()
+            assets_root = (PROJECT_ROOT / "python_frontend" / "assets").resolve()
             if assets_root not in asset_path.parents or not asset_path.exists() or not asset_path.is_file():
                 self._not_found()
                 return

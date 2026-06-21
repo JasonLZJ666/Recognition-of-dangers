@@ -2,7 +2,7 @@
 
 The original task still has only five classes. This builder creates harder
 camera-like scenes from the attachment signs, then crops them with the same
-signal-location logic used by the browser app. Training on these crops reduces
+signal-location logic used by the Python frontend. Training on these crops reduces
 the gap between clean synthetic signs and real upload/camera photos.
 
 Example:

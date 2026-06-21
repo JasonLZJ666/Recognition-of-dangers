@@ -21,14 +21,14 @@ http://127.0.0.1:7860/
 model\artifacts_viewpoint\best_danger_sign_model.pt
 ```
 
-## 指定其他模型
-
-```powershell
-python python_frontend\server.py --checkpoint model\artifacts\best_danger_sign_model.pt
-```
-
 ## 接口
 
 - `GET /`：网页前端
 - `GET /api/status`：查看当前加载的模型
 - `POST /api/predict`：提交 base64 图片并返回识别结果
+
+## 指定模型
+
+```powershell
+python python_frontend\server.py --checkpoint model\artifacts_viewpoint\best_danger_sign_model.pt
+```

@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+docs/~$*
+docs/*_详细版.pptx
+*.tmp
+*.log
+
+# Large generated or legacy assets.
+app/
+external_datasets/
+dataset_all/
+dataset_extended/
+dataset_viewpoint/
+dataset_test_viewpoint/
+dataset_scene_crops/
+model/artifacts/
+model/artifacts_all/
+model/artifacts_extended/
+model/**/danger_sign_model_final.pt
+
+# Optional local outputs.
+*.zip
+*.onnx
+*.onnx.data

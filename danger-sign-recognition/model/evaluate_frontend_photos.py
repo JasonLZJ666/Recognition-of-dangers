@@ -1,8 +1,8 @@
-"""Evaluate frontend-style scene photos with the browser crop preprocessing.
+"""Evaluate frontend-style scene photos with Python frontend preprocessing.
 
-This script mirrors the signal-box crop used by app/app.js before running the
-PyTorch checkpoint. It helps distinguish model weakness from frontend
-preprocessing mismatch.
+This script mirrors the signal-box crop used by the Python web frontend before
+running the PyTorch checkpoint. It helps distinguish model weakness from upload
+or camera preprocessing mismatch.
 """
 
 from __future__ import annotations
