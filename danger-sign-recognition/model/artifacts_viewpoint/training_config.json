@@ -36,6 +36,7 @@
     "metric_for_best": "val_macro_f1",
     "seed": 2026,
     "workers": 0,
+    "init_checkpoint": null,
     "auto_augment": true,
     "amp": false,
     "deterministic": false
