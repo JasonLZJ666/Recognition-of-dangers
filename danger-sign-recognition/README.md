@@ -265,13 +265,3 @@ python python_frontend\server.py --port 7861
 ```text
 http://127.0.0.1:7861/
 ```
-
-## 12. 交付清单
-
-- 训练代码：`model/`
-- 当前最佳模型：`model/artifacts_viewpoint/best_danger_sign_model.pt`
-- 原始数据集：`dataset/`
-- 增强训练集：`dataset_viewpoint/`
-- Python 前端：`python_frontend/`
-- 测试图片：`test_inputs/`
-- 技术报告和答辩材料：`docs/`
