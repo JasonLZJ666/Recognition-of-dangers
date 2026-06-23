@@ -279,7 +279,7 @@ HTML = r"""<!doctype html>
       <div class="brand">
         <div class="mark">TJU</div>
         <div>
-          <h1>危险标志识别<br />Python 推理前端</h1>
+          <h1>天津大学计算机科学与技术学院<br />危险标志识别</h1>
           <p>模型在服务启动时自动导入</p>
         </div>
       </div>
