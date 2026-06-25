@@ -13,6 +13,10 @@ IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
 SUPPORTED_ARCHITECTURES = ("efficientnet_b0", "resnet18", "mobilenet_v3_small", "strong_cnn")
 
+DEFAULT_YOLO_DATASET_DIR = PROJECT_ROOT / "dataset_yolo"
+DEFAULT_YOLO_ARTIFACT = PROJECT_ROOT / "model" / "artifacts_viewpoint" / "yolo_detector.pt"
+YOLO_CLASSES = {0: "danger_sign"}
+
 ARTIFACT_FILENAMES = {
     "best_checkpoint": "best_danger_sign_model.pt",
     "final_checkpoint": "danger_sign_model_final.pt",

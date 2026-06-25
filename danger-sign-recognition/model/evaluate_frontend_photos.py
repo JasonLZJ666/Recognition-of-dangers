@@ -23,7 +23,8 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from model.architectures import build_model  # noqa: E402
-from model.constants import IMAGE_EXTENSIONS, IMAGENET_MEAN, IMAGENET_STD  # noqa: E402
+from model.constants import DEFAULT_YOLO_ARTIFACT, IMAGE_EXTENSIONS, IMAGENET_MEAN, IMAGENET_STD  # noqa: E402
+from model.yolo_utils import load_yolo_model, yolo_detect_sign  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -33,6 +34,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--crop", choices=["browser", "full", "padded", "square"], default="browser")
     parser.add_argument("--padding", type=float, default=0.28)
     parser.add_argument("--out", type=Path, default=None, help="Optional JSON report path")
+    parser.add_argument("--detector", choices=["color", "yolo", "auto"], default="auto",
+                        help="Detection method: color (heuristic), yolo, auto (yolo if available)")
+    parser.add_argument("--yolo", type=Path, default=DEFAULT_YOLO_ARTIFACT,
+                        help="Path to YOLO detector weights")
     return parser.parse_args()
 
 
@@ -196,10 +201,25 @@ def square_bounds(bounds: tuple[int, int, int, int], size: tuple[int, int], padd
     )
 
 
-def preprocess(image: Image.Image, image_size: int, crop_mode: str, padding: float) -> torch.Tensor:
+def preprocess(
+    image: Image.Image,
+    image_size: int,
+    crop_mode: str,
+    padding: float,
+    yolo_model=None,
+) -> tuple[torch.Tensor, str]:
+    """Returns (tensor, detection_method)."""
     image = ImageOps.exif_transpose(image).convert("RGB")
+    detection_method = "color"
     if crop_mode != "full":
-        bounds = browser_signal_bounds(image)
+        bounds = None
+        if yolo_model is not None:
+            yolo_bounds = yolo_detect_sign(yolo_model, image)
+            if yolo_bounds is not None:
+                bounds = yolo_bounds
+                detection_method = "yolo"
+        if bounds is None:
+            bounds = browser_signal_bounds(image)
         if crop_mode == "padded":
             bounds = padded_bounds(bounds, image.size, padding)
         elif crop_mode == "square":
@@ -212,7 +232,7 @@ def preprocess(image: Image.Image, image_size: int, crop_mode: str, padding: flo
             transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
         ]
     )
-    return transform(image).unsqueeze(0)
+    return transform(image).unsqueeze(0), detection_method
 
 
 def main() -> None:
@@ -232,23 +252,40 @@ def main() -> None:
     model.load_state_dict(checkpoint["model"])
     model.eval()
 
+    yolo_model = None
+    if args.detector in ("yolo", "auto"):
+        yolo_model = load_yolo_model(args.yolo)
+        if yolo_model is None and args.detector == "yolo":
+            print(f"错误: YOLO 模型未找到: {args.yolo}")
+            sys.exit(1)
+
     correct = 0
     total = 0
+    yolo_count = 0
+    color_count = 0
     per_class: dict[str, Counter] = defaultdict(Counter)
     mistakes: list[str] = []
     with torch.no_grad():
         for path, truth in image_files(args.dataset):
-            tensor = preprocess(Image.open(path), image_size, args.crop, args.padding)
+            tensor, det_method = preprocess(
+                Image.open(path), image_size, args.crop, args.padding, yolo_model=yolo_model,
+            )
+            if det_method == "yolo":
+                yolo_count += 1
+            else:
+                color_count += 1
             logits = model(tensor)
             pred = classes[int(torch.argmax(logits, dim=1).item())]
             total += 1
             correct += int(pred == truth)
             per_class[truth][pred] += 1
             if pred != truth:
-                mistakes.append(f"{truth}/{path.name} -> {pred}")
+                mistakes.append(f"{truth}/{path.name} -> {pred} ({det_method})")
 
+    detector_str = f"detector={args.detector} yolo_hits={yolo_count} color_fallbacks={color_count}"
     print(f"dataset={args.dataset}")
     print(f"crop={args.crop} total={total} correct={correct} accuracy={correct / max(1, total):.4f}")
+    print(detector_str)
     for truth in classes:
         row = per_class.get(truth, Counter())
         support = sum(row.values())
@@ -265,6 +302,9 @@ def main() -> None:
             "dataset": str(args.dataset),
             "crop": args.crop,
             "padding": args.padding,
+            "detector": args.detector,
+            "yolo_detections": yolo_count,
+            "color_fallbacks": color_count,
             "total": total,
             "correct": correct,
             "accuracy": correct / max(1, total),

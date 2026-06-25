@@ -18,6 +18,9 @@ model/artifacts_all/
 model/artifacts_extended/
 model/**/danger_sign_model_final.pt
 
+dataset_yolo/
+model/artifacts_viewpoint/yolo_runs/
+
 # Optional local outputs.
 *.zip
 *.onnx

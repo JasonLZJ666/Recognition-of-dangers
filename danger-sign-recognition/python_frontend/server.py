@@ -30,8 +30,9 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from model.architectures import build_model  # noqa: E402
-from model.constants import IMAGENET_MEAN, IMAGENET_STD  # noqa: E402
+from model.constants import DEFAULT_YOLO_ARTIFACT, IMAGENET_MEAN, IMAGENET_STD  # noqa: E402
 from model.evaluate_frontend_photos import browser_signal_bounds, square_bounds  # noqa: E402
+from model.yolo_utils import load_yolo_model, yolo_detect_sign  # noqa: E402
 
 
 SIGN_INFO = {
@@ -99,7 +100,13 @@ def softmax(values: torch.Tensor) -> list[float]:
 
 
 class DangerSignPredictor:
-    def __init__(self, checkpoint_path: Path, device_name: str = "auto", crop_padding: float = 0.18) -> None:
+    def __init__(
+        self,
+        checkpoint_path: Path,
+        device_name: str = "auto",
+        crop_padding: float = 0.18,
+        yolo_path: Path | None = None,
+    ) -> None:
         self.checkpoint_path = checkpoint_path
         self.crop_padding = crop_padding
         self.device = self._resolve_device(device_name)
@@ -113,6 +120,7 @@ class DangerSignPredictor:
                 transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
             ]
         )
+        self.yolo_model = load_yolo_model(yolo_path) if yolo_path else None
 
     @staticmethod
     def _resolve_device(device_name: str) -> torch.device:
@@ -153,19 +161,28 @@ class DangerSignPredictor:
             "bestMetricName": self.metadata.get("best_metric_name"),
             "bestMetricValue": self.metadata.get("best_metric_value"),
             "loadSeconds": self.metadata.get("load_seconds"),
+            "yoloDetector": "loaded" if self.yolo_model else "none",
         }
 
-    def _preprocess(self, image: Image.Image) -> tuple[torch.Tensor, tuple[int, int, int, int]]:
+    def _preprocess(self, image: Image.Image) -> tuple[torch.Tensor, tuple[int, int, int, int], str]:
         image = ImageOps.exif_transpose(image).convert("RGB")
-        bounds = browser_signal_bounds(image)
+        detection_method = "color"
+        bounds = None
+        if self.yolo_model is not None:
+            yolo_bounds = yolo_detect_sign(self.yolo_model, image)
+            if yolo_bounds is not None:
+                bounds = yolo_bounds
+                detection_method = "yolo"
+        if bounds is None:
+            bounds = browser_signal_bounds(image)
         bounds = square_bounds(bounds, image.size, self.crop_padding)
         cropped = image.crop(bounds)
         tensor = self.transform(cropped).unsqueeze(0).to(self.device)
-        return tensor, bounds
+        return tensor, bounds, detection_method
 
     def predict(self, image: Image.Image) -> dict[str, Any]:
         started = time.perf_counter()
-        tensor, bounds = self._preprocess(image)
+        tensor, bounds, detection_method = self._preprocess(image)
         with torch.no_grad():
             logits = self.model(tensor)
             probabilities = softmax(logits)
@@ -187,6 +204,7 @@ class DangerSignPredictor:
         return {
             "ok": True,
             "backend": "PyTorch Python",
+            "detection": detection_method,
             "latencyMs": round((time.perf_counter() - started) * 1000),
             "crop": {"x1": bounds[0], "y1": bounds[1], "x2": bounds[2], "y2": bounds[3]},
             "best": candidates[0],
@@ -336,6 +354,7 @@ HTML = r"""<!doctype html>
           <p class="hint" id="actionText">请上传图片或开启摄像头。</p>
           <div class="meta">
             <div><span>后端</span><strong id="backendValue">Python</strong></div>
+            <div><span>检测</span><strong id="detectionValue">--</strong></div>
             <div><span>耗时</span><strong id="latencyValue">-- ms</strong></div>
             <div><span>裁剪框</span><strong id="cropValue">--</strong></div>
           </div>
@@ -372,6 +391,7 @@ HTML = r"""<!doctype html>
       scoreList: document.querySelector("#scoreList"),
       actionText: document.querySelector("#actionText"),
       backendValue: document.querySelector("#backendValue"),
+      detectionValue: document.querySelector("#detectionValue"),
       latencyValue: document.querySelector("#latencyValue"),
       cropValue: document.querySelector("#cropValue"),
       sampleList: document.querySelector("#sampleList")
@@ -402,7 +422,8 @@ HTML = r"""<!doctype html>
       const response = await fetch("/api/status");
       const status = await response.json();
       els.checkpoint.textContent = status.checkpoint;
-      els.modelLine.textContent = `${status.arch} · ${status.device} · ${status.classes.length} 类`;
+      const yoloTag = status.yoloDetector === "loaded" ? " · YOLO" : "";
+      els.modelLine.textContent = `${status.arch} · ${status.device} · ${status.classes.length} 类${yoloTag}`;
       els.statusPill.textContent = "模型已加载";
     }
 
@@ -413,6 +434,7 @@ HTML = r"""<!doctype html>
       els.riskBadge.textContent = `${best.risk} · ${percent(best.confidence)}`;
       els.actionText.textContent = best.action;
       els.backendValue.textContent = data.backend;
+      els.detectionValue.textContent = data.detection === "yolo" ? "YOLO 检测" : "颜色检测";
       els.latencyValue.textContent = `${data.latencyMs} ms`;
       els.cropValue.textContent = `${data.crop.x1},${data.crop.y1} - ${data.crop.x2},${data.crop.y2}`;
       els.scoreList.innerHTML = data.candidates.map((item) => `
@@ -606,6 +628,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--port", type=int, default=7860)
     parser.add_argument("--device", default="auto", help="auto, cpu, cuda, cuda:0, ...")
     parser.add_argument("--crop-padding", type=float, default=0.18)
+    parser.add_argument("--yolo", type=Path, default=DEFAULT_YOLO_ARTIFACT,
+                        help="Path to YOLO detector weights (auto-loaded if exists)")
     return parser.parse_args()
 
 
@@ -613,13 +637,17 @@ def main() -> None:
     args = parse_args()
     checkpoint = resolve_checkpoint(args.checkpoint)
     print(f"loading model: {checkpoint}", flush=True)
-    predictor = DangerSignPredictor(checkpoint, device_name=args.device, crop_padding=args.crop_padding)
+    yolo_path = args.yolo if args.yolo.exists() else None
+    if yolo_path:
+        print(f"loading YOLO detector: {yolo_path}", flush=True)
+    predictor = DangerSignPredictor(checkpoint, device_name=args.device, crop_padding=args.crop_padding, yolo_path=yolo_path)
     PythonFrontendHandler.predictor = predictor
     print(
         "model loaded: "
         f"arch={predictor.metadata.get('arch')} "
         f"device={predictor.device} "
         f"classes={len(predictor.classes)} "
+        f"yolo={'yes' if predictor.yolo_model else 'no'} "
         f"time={predictor.metadata.get('load_seconds')}s",
         flush=True,
     )
